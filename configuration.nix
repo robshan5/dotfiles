@@ -138,6 +138,7 @@
     transmission-gtk
     feh
     starship
+    python311Packages.pip
     #gnome-tweaks
     #gnome-shell-extensions
   ];

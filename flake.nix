@@ -36,7 +36,7 @@
         ];
       };
     };
-    devShells.x86_64-linux.default = (import ./user/development/shell.nix {inherit pkgs; });
+    devShells.x86_64-linux.default = (import ./user/development/python/shell.nix {inherit pkgs; });
   };
 
 }

@@ -3,7 +3,7 @@
 {
   programs.kitty = {
     enable = true;
-    themeFile = "Nord";
+    themeFile = "OneDark-Pro";
 
     extraConfig = ''
       background_opacity 0.82

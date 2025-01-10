@@ -33,6 +33,7 @@
           ./user/programs/nvim/default.nix
           ./user/programs/rofi/default.nix
           ./user/programs/polybar/default.nix
+          ./user/programs/yazi/default.nix
         ];
       };
     };

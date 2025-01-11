@@ -92,7 +92,7 @@ in
         "${super}+Control+9" = "move container to workspace 9, workspace 9";
         "${super}+Control+0" = "move container to workspace 10, workspace 10";
         #restart sway in place
-        "${super}+Shift+r" = "swaymsg reload";
+        "${super}+Shift+r" = "exec swaymsg reload";
         #exit
         "${super}+q" = "i3-nagbar -t warning -m 'Do you want to exit?' -b 'Yes' 'i3-msg exit'";
         #media keybindings

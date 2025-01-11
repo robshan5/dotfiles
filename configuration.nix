@@ -165,7 +165,11 @@
   ];
 
   #fonts
-  fonts.packages = with pkgs; [ nerdfonts ];
+  fonts.packages = with pkgs; [
+    nerdfonts
+    terminus-nerdfont
+    noto-fonts
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

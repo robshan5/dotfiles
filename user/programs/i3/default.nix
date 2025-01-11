@@ -17,7 +17,7 @@ in
       keybindings = {
         #program keybindings
         "${super}+Shift+Return" = "workspace 1, exec firefox";
-        "${super}+ Return" = "workspace 2, exec kitty";
+        "${super}+Return" = "workspace 2, exec kitty";
         "${super}+Control+Return" = "workspace 3, exec kitty -e nvim";
         "${super}+s" = "workspace 4, exec LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify-launcher";
         "${super}+${alt}+Return" = "workspace 5, exec kitty -e yazi";
@@ -25,7 +25,7 @@ in
         #wifi
         "${super}+w" = "exec wifi";
         #music
-        "${super}" = "exec music";
+        # "${super}" = "exec music";
         #rofi
         "${super}+d" = "exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun 0 -sidebar-mode -columns 3";
         #kill window
@@ -91,8 +91,8 @@ in
         "${super}+Control+8" = "move container to workspace 8, workspace 8";
         "${super}+Control+9" = "move container to workspace 9, workspace 9";
         "${super}+Control+0" = "move container to workspace 10, workspace 10";
-        #restart i3 in place
-        "${super}+Shift+r" = "restart";
+        #restart sway in place
+        "${super}+Shift+r" = "swaymsg reload";
         #exit
         "${super}+q" = "i3-nagbar -t warning -m 'Do you want to exit?' -b 'Yes' 'i3-msg exit'";
         #media keybindings
@@ -101,11 +101,11 @@ in
         "XF86AudioMute" = "exec --no-startup-id media-control volume_mute";
         "XF86MonBrightnessUp" = "exec --no-startup-id media-control brightness_up";
         "XF86MonBrightnessDown" = "exec --no-startup-id media-control brightness_down";
-        "XF86AudioPlayPause" = "exec --no-startup-id media-control play_pause";
-        "XF86AudioPause" = "exec --no-startup-id media-control play_pause";
-        "XF86AudioPlay" = "exec --no-startup-id media-control play_pause";
-        "XF86AudioNext" = "exec --no-startup-id media-control next_track";
-        "XF86AudioPrev" = "exec --no-startup-id media-control prev_track";
+        # "XF86AudioPlayPause" = "exec --no-startup-id media-control play_pause";
+        # "XF86AudioPause" = "exec --no-startup-id media-control play_pause";
+        # "XF86AudioPlay" = "exec --no-startup-id media-control play_pause";
+        # "XF86AudioNext" = "exec --no-startup-id media-control next_track";
+        # "XF86AudioPrev" = "exec --no-startup-id media-control prev_track";
         "XF86AudioMicMute" = "exec --no-startup-id media-control mic_mute";
         "XF86Calculator" = "exec --no-startup-id betterlockscreen -l";
         "Print" = "exec --no-startup-id screenshot";
@@ -125,12 +125,17 @@ in
       bars = [];
       startup = [
         {
-          command = "--no-startup-id ~/.config/polybar/launch.sh";
+          command = "exec --no-startup-id eww deamon";
           always = true;
           notification = false;
         }
         {
-          command = "feh --bg-fill ${wallpaper} &";
+          command = "exec --no-startup-id eww open bar";
+          always = true;
+          notification = false;
+        }
+        {
+          command = "exec swaybg -i ${wallpaper} -m fill";
           always = true;
           notification = true;
         }

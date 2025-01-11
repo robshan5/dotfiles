@@ -34,6 +34,7 @@
           ./user/programs/rofi/default.nix
           ./user/programs/polybar/default.nix
           ./user/programs/yazi/default.nix
+          ./user/programs/eww/default.nix
         ];
       };
     };

@@ -49,7 +49,22 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
+
+  #Enable XWayland support for X11 apps
+  programs.xwayland.enable = true;
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "nouveau" ];
+  };
+  #Input config for Wayland
+  services.xserver.libinput = {
+    enable = true;
+  };
+  #Nvidia drivers
+  hardware.nvidia = {
+    modesetting.enable = false;
+  };
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -58,6 +73,9 @@
   # Enable i3
   services.xserver.desktopManager.xterm.enable = false;
   services.xserver.windowManager.i3.enable = true;
+
+  #Enable Sway
+  programs.sway.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -116,6 +134,10 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     i3
+    sway
+    xwayland
+    wl-clipboard
+    swaybg
     kitty
     rofi
     vim
@@ -139,8 +161,7 @@
     feh
     starship
     python311Packages.pip
-    #gnome-tweaks
-    #gnome-shell-extensions
+    eww
   ];
 
   #fonts

@@ -30,7 +30,7 @@
     (box :class "right"
          :halign "start"
          :spacing 20
-      (workspaces))
+      (workspaces :monitor monitor))
     (box :class "right"
          :halign "end"
          :spacing 20
@@ -163,4 +163,3 @@
     :space-evenly false
     (label :class "icon" :text "󰥔")
     (label :text time_poll)))
-

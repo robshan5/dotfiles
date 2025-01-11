@@ -125,12 +125,12 @@ in
       bars = [];
       startup = [
         {
-          command = "exec --no-startup-id eww deamon";
+          command = "exec --no-startup-id eww daemon";
           always = true;
           notification = false;
         }
         {
-          command = "exec --no-startup-id eww open bar";
+          command = "exec --no-startup-id eww open win0";
           always = true;
           notification = false;
         }

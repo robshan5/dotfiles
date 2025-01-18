@@ -5,7 +5,7 @@ let
   wallpaper = "$HOME/Pictures/wallpapers/walls/radium/a_drawing_of_an_astronaut_in_space.png";
 in 
 {
-  xsession.windowManager.i3 = {
+  wayland.windowManager.sway = {
     enable = true;
     config = {
       modifier = "$super";
@@ -122,22 +122,21 @@ in
         indicator = "#ffffff";
         text = "#ffffff";
       };
-      bars = [];
+      bars = [
+        {
+          command = "waybar";
+          position = "top";
+        }
+      ];
       startup = [
-        {
-          command = "exec --no-startup-id eww daemon";
-          always = true;
-          notification = false;
-        }
-        {
-          command = "exec --no-startup-id eww open win0";
-          always = true;
-          notification = false;
-        }
+        # {
+        #   command = "exec --no-startup-id waybar";
+        #   always = true;
+        #   notification = false;
+        # }
         {
           command = "exec swaybg -i ${wallpaper} -m fill";
           always = true;
-          notification = true;
         }
       ];
     };
@@ -146,6 +145,13 @@ in
       exec_always playerctld daemon
       exec_always xset b off
       exec_always LD_PRELOAD=/usr/local/lib/spotify-adblock.so
+      exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+      exec /usr/libexec/xdg-desktop-portal &
+      exec /usr/libexec/xdg-desktop-portal-wlr &
+      exec /usr/libexec/xdg-desktop-portal-gtk &
+      input * {
+        xkb_layout gb
+      }
     '';
   };
   services.picom.enable = true;

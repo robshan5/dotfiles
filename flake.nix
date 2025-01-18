@@ -6,9 +6,10 @@
     nixpkgs.url = "nixpkgs/nixos-24.11";
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { nixpkgs, home-manager, ...}:
+  outputs = { nixpkgs, home-manager, ...}@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -19,6 +20,7 @@
         inherit system;
         modules = [
          ./configuration.nix
+          inputs.stylix.nixosModules.stylix
         ];
       };
     };
@@ -28,13 +30,13 @@
         modules = [
           ./home.nix
           ./user/programs/bash/default.nix
-          ./user/programs/i3/default.nix
+          ./user/programs/sway/default.nix
           ./user/programs/kitty/default.nix
           ./user/programs/nvim/default.nix
           ./user/programs/rofi/default.nix
           ./user/programs/polybar/default.nix
           ./user/programs/yazi/default.nix
-          ./user/programs/eww/default.nix
+          ./user/programs/waybar/default.nix
         ];
       };
     };

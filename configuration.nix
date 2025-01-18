@@ -55,16 +55,19 @@
   programs.xwayland.enable = true;
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nouveau" ];
   };
   #Input config for Wayland
   services.xserver.libinput = {
     enable = true;
   };
   #Nvidia drivers
-  hardware.nvidia = {
-    modesetting.enable = false;
+  hardware = {
+    opengl.enable = true;
+    nvidia.modesetting.enable = true;
   };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -77,12 +80,6 @@
   #Enable Sway
   programs.sway.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
-
   # Configure console keymap
   console.keyMap = "uk";
 
@@ -94,19 +91,14 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    jack.enable = true;
   };
 
   #Shells for system
@@ -161,8 +153,18 @@
     feh
     starship
     python311Packages.pip
-    eww
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-wlr # Wayland-specific backend
+    (pkgs.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true"];
+      })
+    )
   ];
+
+  #colour schemes
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/twilight.yaml";
+  stylix.image = ./a_city_skyline_at_night.jpg;
 
   #fonts
   fonts.packages = with pkgs; [

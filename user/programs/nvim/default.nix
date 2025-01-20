@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, inputs, ...}:
 let
   nvimConfig = ./nvim;
 in 
@@ -65,6 +65,7 @@ in
       zoxide-vim
       nvim-snippy
       cmp-snippy
+      gruvbox-nvim
     ];
   };
 }

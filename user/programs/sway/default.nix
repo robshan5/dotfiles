@@ -2,7 +2,7 @@
 let
   super = "Mod4";
   alt = "Mod1";
-  wallpaper = "$HOME/Pictures/wallpapers/walls/radium/a_drawing_of_an_astronaut_in_space.png";
+  wallpaper = "$HOME/nix-config/a_city_skyline_at_night.jpg";
 in 
 {
   wayland.windowManager.sway = {
@@ -116,11 +116,11 @@ in
       };
       window.titlebar = false;
       colors.focused = {
-        background = "#ffffff";
-        border = "#ffffff";
-        childBorder = "#ffffff";
-        indicator = "#ffffff";
-        text = "#ffffff";
+        background = "#ebdbb2";
+        border = "#ebdbb2";
+        childBorder = "#ebdbb2";
+        indicator = "#ebdbb2";
+        text = "#ebdbb2";
       };
       bars = [
         {

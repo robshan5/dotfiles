@@ -1,11 +1,10 @@
-/* Twilight Theme Style for Waybar */
 #waybar {
   padding: 2px 0;
 }
 * {
   font-family: "monospace";
   font-size: 12px;
-  color: #c9d1d9; /* Muted light gray for better readability */
+  color: #ebdbb2; /* Gruvbox light foreground */
   background-color: transparent;
 }
 
@@ -13,32 +12,33 @@
   padding: 2px 4px;
   margin: 1px;
   border-radius: 4px;
-  background: #3b4252; /* Twilight dark grayish-blue */
-  color: #c9d1d9;
+  background: #504945; /* Gruvbox dark grayish-brown */
+  color: #1d2021; /* Gruvbox light foreground */
 }
 
 #workspaces button.focused {
-  background: #5e81ac; /* Darker Twilight cyan accent */
-  color: #2e3440; /* Twilight dark background for contrast */
+  background: #b57614; /* Gruvbox medium yellow for focus */
+  color: #1d2021; /* Darker text color for better contrast */
 }
 
 #clock {
   padding: 2px;
   margin: 0 4px;
-  background: #2e3440; /* Darker background for clock */
+  background: #504945; /* Gruvbox dark background */
   border-radius: 4px;
-  color: #c9d1d9; /* Muted light gray */
+  color: #ebdbb2; /* Gruvbox light foreground */
 }
 
 #cpu, #memory, #disk, #pulseaudio {
   padding: 2px;
   margin: 0 4px;
   border-radius: 4px;
-  background: #3b4252; /* Twilight dark grayish-blue */
-  color: #c9d1d9;
+  background: #504945; /* Gruvbox dark grayish-brown */
+  color: #ebdbb2; /* Gruvbox light foreground */
 }
 
 #pulseaudio.muted {
-  background: #bf616a; /* Twilight muted red for muted state */
-  color: #2e3440; /* Contrast with muted background */
+  background: #cc241d; /* Gruvbox red for muted state */
+  color: #282828; /* Gruvbox dark background for contrast */
 }
+

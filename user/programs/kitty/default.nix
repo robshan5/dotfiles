@@ -10,6 +10,7 @@
 
     extraConfig = ''
       background_opacity 0.82
+      background #1a1a1a
     '';
   };
 }

@@ -30,6 +30,7 @@
         modules = [
           ./home.nix
         ];
+        extraSpecialArgs = {inherit inputs; };
       };
     };
     devShells.x86_64-linux.default = (import ./user/development/python/shell.nix {inherit pkgs; });

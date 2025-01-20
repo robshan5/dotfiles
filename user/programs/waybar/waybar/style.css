@@ -1,0 +1,40 @@
+/* Twilight Theme Style for Waybar */
+* {
+  font-family: "monospace";
+  font-size: 14px;
+  color: #c9d1d9; /* Muted light gray for better readability */
+}
+
+#workspaces button {
+  padding: 5px;
+  margin: 2px;
+  border-radius: 4px;
+  background: #3b4252; /* Twilight dark grayish-blue */
+  color: #c9d1d9;
+}
+
+#workspaces button.focused {
+  background: #88c0d0; /* Twilight cyan accent */
+  color: #2e3440; /* Twilight dark background for contrast */
+}
+
+#clock {
+  background: #2e3440; /* Darker background for clock */
+  padding: 5px;
+  border-radius: 4px;
+  color: #c9d1d9; /* Muted light gray */
+}
+
+#cpu, #memory, #disk, #pulseaudio {
+  margin: 0 5px;
+  padding: 5px;
+  border-radius: 4px;
+  background: #3b4252; /* Twilight dark grayish-blue */
+  color: #c9d1d9;
+}
+
+#pulseaudio.muted {
+  background: #bf616a; /* Twilight muted red for muted state */
+  color: #2e3440; /* Contrast with muted background */
+}
+

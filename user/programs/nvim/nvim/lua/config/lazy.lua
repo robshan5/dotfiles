@@ -32,4 +32,5 @@ require("lazy").setup({
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
+  lockfile = vim.fn.expand("~/nix-config/user/programs/nvim/nvim/lazy-lock.json")
 })

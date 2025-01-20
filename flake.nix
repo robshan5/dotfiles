@@ -29,14 +29,6 @@
         inherit pkgs;
         modules = [
           ./home.nix
-          ./user/programs/bash/default.nix
-          ./user/programs/sway/default.nix
-          ./user/programs/kitty/default.nix
-          ./user/programs/nvim/default.nix
-          ./user/programs/rofi/default.nix
-          ./user/programs/polybar/default.nix
-          ./user/programs/yazi/default.nix
-          ./user/programs/waybar/default.nix
         ];
       };
     };

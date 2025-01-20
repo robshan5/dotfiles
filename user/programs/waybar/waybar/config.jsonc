@@ -1,11 +1,11 @@
 {
   "layer": "top", 
   "position": "top",
-  "modules-left": ["workspaces"],
+  "modules-left": ["sway/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["cpu", "memory", "disk", "pulseaudio"],
 
-  "workspaces": {
+  "sway/workspaces": {
     "disable-scroll": true,
     "persistent_workspaces": false,
     "icon-map": {
@@ -18,7 +18,7 @@
   },
 
   "clock": {
-    "format": "{:%a, %b %d %H:%M:%S}"
+    "format": "{:%a, %b %d %H:%M}"
   },
 
   "cpu": {

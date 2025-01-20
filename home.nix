@@ -2,6 +2,14 @@
 
 {
   imports = [
+    ./user/programs/bash/default.nix
+    ./user/programs/sway/default.nix
+    ./user/programs/kitty/default.nix
+    ./user/programs/nvim/default.nix
+    ./user/programs/rofi/default.nix
+    ./user/programs/polybar/default.nix
+    ./user/programs/yazi/default.nix
+    ./user/programs/waybar/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -20,15 +28,41 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    #dependencies for waybar
-    hello
+    #window managers
+    i3
+    sway
+
+    #status bars
+    waybar
+    polybar
+
+    #programs
+    firefox
+    kitty
+    rofi
+    vim
+    vlc
+    yazi
+    transmission_4-gtk
+    
+    #utilities
+    picom
+    wget
+    git
+    unzip
+    zip
+    zoxide
+    feh
+    swaybg
+    starship
+    wl-clipboard
+    xwayland
     gtk-layer-shell
     noto-fonts
     font-awesome
     jq
 
+    #fonts
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 

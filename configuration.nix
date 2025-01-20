@@ -125,33 +125,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    i3
-    sway
-    xwayland
-    wl-clipboard
-    swaybg
-    kitty
-    rofi
-    vim
-    vlc
-    yazi
-    neovim
-    picom
-    polybar
     gcc
     glibc
     nodejs
     python3
     lua
-    wget
-    git
-    firefox
-    unzip
-    zip
-    zoxide
-    transmission-gtk
-    feh
-    starship
     python311Packages.pip
     xdg-desktop-portal
     xdg-desktop-portal-gtk

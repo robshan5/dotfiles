@@ -57,12 +57,12 @@
     enable = true;
   };
   #Input config for Wayland
-  services.xserver.libinput = {
+  services.libinput = {
     enable = true;
   };
   #Nvidia drivers
   hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
     nvidia.modesetting.enable = true;
   };
 
@@ -82,6 +82,7 @@
 
   # Configure console keymap
   console.keyMap = "uk";
+  services.xserver.xkb.layout = "gb";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -113,6 +114,7 @@
   users.users.robshan = {
     isNormalUser = true;
     description = "Robert Shanahan";
+    hashedPassword = "$y$j9T$Usn81ZvUglhmuki8acVBr.$aBj1wfAPxMyr9QBFCHJVjNCSs77gTgrAXJxeqmWRRwC";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird

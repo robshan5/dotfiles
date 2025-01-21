@@ -1,0 +1,11 @@
+{ "msg_ruler", "sl:1", "tick:45", false, { { 1, "1,0-1         Top" } } }
+{ "msg_showcmd", "sl:1", "tick:47", false, { { 0, ":" } } }
+{ "cmdline_show", "sl:1", "tick:48", "mode:c", { { 0, "" } } }
+{ "cmdline_show", "sl:1", "tick:51", "mode:c", { { 0, "q" } } }
+{ "cmdline_hide", "sl:1", "tick:53", false, 1 }
+{ "msg_showcmd", "sl:1", "tick:54", false, { { 0, ":" } } }
+{ "cmdline_show", "sl:1", "tick:55", "mode:c", { { 0, "" } } }
+{ "cmdline_show", "sl:1", "tick:58", "mode:c", { { 0, "q" } } }
+{ "cmdline_hide", "sl:1", "tick:60", false, 1 }
+{ "msg_show", "sl:1", "tick:61", false, "emsg" }
+{ "msg_show", "sl:1", "tick:62", false, "emsg" }

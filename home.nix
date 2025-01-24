@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [
@@ -10,6 +10,8 @@
     ./user/programs/polybar/default.nix
     ./user/programs/yazi/default.nix
     ./user/programs/waybar/default.nix
+    ./user/programs/firefox/default.nix
+    inputs.textfox.homeManagerModules.default
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -27,6 +29,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  nixpkgs.config.allowUnfreePredicate = _: true;
   home.packages = with pkgs; [
     #window managers
     i3
@@ -37,13 +40,15 @@
     polybar
 
     #programs
-    firefox
+    # firefox
     kitty
     rofi
     vim
     vlc
     yazi
     transmission_4-gtk
+    spotify
+    spotify-cli-linux
     
     #utilities
     picom
@@ -61,6 +66,8 @@
     noto-fonts
     font-awesome
     jq
+    luajit
+    lua52Packages.luaffi
 
     #fonts
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

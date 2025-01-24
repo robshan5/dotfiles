@@ -9,3 +9,40 @@
 { "cmdline_hide", "sl:1", "tick:60", false, 1 }
 { "msg_show", "sl:1", "tick:61", false, "emsg" }
 { "msg_show", "sl:1", "tick:62", false, "emsg" }
+{ "msg_showcmd", "sl:1", "tick:1", false, { { 0, "i" } } }
+{ "msg_showmode", "sl:1", "tick:2", false, { { 9, "-- INSERT --" } } }
+{ "msg_showmode", "sl:1", "tick:5", false, {} }
+{ "msg_showcmd", "sl:1", "tick:6", false, { { 0, ":" } } }
+{ "cmdline_show", "sl:1", "tick:7", "mode:c", { { 0, "" } } }
+{ "cmdline_show", "sl:1", "tick:10", "mode:c", { { 0, "a" } } }
+{ "cmdline_show", "sl:1", "tick:12", "mode:c", { { 0, "as;" } } }
+{ "cmdline_show", "sl:1", "tick:14", "mode:c", { { 0, "as;d" } } }
+{ "cmdline_show", "sl:1", "tick:16", "mode:c", { { 0, "as;df" } } }
+{ "cmdline_show", "sl:1", "tick:18", "mode:c", { { 0, "as;dfj" } } }
+{ "cmdline_hide", "sl:1", "tick:20", false, 1 }
+{ "msg_show", "sl:1", "tick:21", false, "emsg" }
+{ "msg_showcmd", "sl:1", "tick:23", false, { { 0, ":" } } }
+{ "cmdline_show", "sl:1", "tick:24", "mode:c", { { 0, "" } } }
+{ "cmdline_show", "sl:1", "tick:27", "mode:c", { { 0, "e" } } }
+{ "cmdline_show", "sl:1", "tick:29", "mode:c", { { 0, "e " } } }
+{ "cmdline_show", "sl:1", "tick:31", "mode:c", { { 0, "e i" } } }
+{ "cmdline_show", "sl:1", "tick:33", "mode:c", { { 0, "e in" } } }
+{ "cmdline_show", "sl:1", "tick:35", "mode:c", { { 0, "e ini" } } }
+{ "cmdline_show", "sl:1", "tick:37", "mode:c", { { 0, "e init" } } }
+{ "cmdline_show", "sl:1", "tick:39", "mode:c", { { 0, "e init." } } }
+{ "cmdline_show", "sl:1", "tick:41", "mode:c", { { 0, "e init.l" } } }
+{ "cmdline_show", "sl:1", "tick:43", "mode:c", { { 0, "e init.lu" } } }
+{ "cmdline_show", "sl:1", "tick:45", "mode:c", { { 0, "e init.lua" } } }
+{ "cmdline_hide", "sl:1", "tick:47", false, 1 }
+{ "msg_showcmd", "sl:1", "tick:48", false, { { 0, ":" } } }
+{ "cmdline_show", "sl:1", "tick:49", "mode:c", { { 0, "" } } }
+{ "cmdline_show", "sl:1", "tick:52", "mode:c", { { 0, "q" } } }
+{ "cmdline_hide", "sl:1", "tick:54", false, 1 }
+{ "msg_show", "sl:1", "tick:55", false, "emsg" }
+{ "msg_show", "sl:1", "tick:56", false, "emsg" }
+{ "msg_showcmd", "sl:1", "tick:59", false, { { 0, ":" } } }
+{ "cmdline_show", "sl:1", "tick:60", "mode:c", { { 0, "" } } }
+{ "cmdline_show", "sl:1", "tick:63", "mode:c", { { 0, "q" } } }
+{ "cmdline_show", "sl:1", "tick:65", "mode:c", { { 0, "qa" } } }
+{ "cmdline_show", "sl:1", "tick:67", "mode:c", { { 0, "qa!" } } }
+{ "cmdline_hide", "sl:1", "tick:69", false, 1 }

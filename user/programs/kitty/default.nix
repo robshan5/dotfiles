@@ -7,6 +7,10 @@
   programs.kitty = {
     enable = true;
     themeFile = "Twilight";
+    font = {
+      name = "JetBrains Mono";
+      size = 12;
+    };
 
     extraConfig = ''
       background_opacity 0.82

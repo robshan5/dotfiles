@@ -19,7 +19,7 @@ in
         "${super}+Shift+Return" = "workspace 1, exec firefox";
         "${super}+Return" = "workspace 2, exec kitty";
         "${super}+Control+Return" = "workspace 3, exec kitty -e nvim";
-        "${super}+s" = "workspace 4, exec LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify-launcher";
+        "${super}+s" = "workspace 4, exec spotify";
         "${super}+${alt}+Return" = "workspace 5, exec kitty -e yazi";
         "${super}+t" = "workspace 10, exec transmission-gtk";
         #wifi

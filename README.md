@@ -1,4 +1,4 @@
-* Installation
+# Installation
   - Install nixos, git and vim
   - Copy these commands to install home-manager (this is for 24.11 so check if you need to update the version your downloading)
     ```

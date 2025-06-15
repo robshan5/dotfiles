@@ -87,8 +87,7 @@
         wine
         glxinfo
 
-        #keyboard keys
-        wev
+        androidenv.androidPkgs.emulator
 
         nerd-fonts.jetbrains-mono
         nerd-fonts.recursive-mono

@@ -1,0 +1,56 @@
+/* Hide minimize, maximize, and close buttons */
+.titlebar-buttonbox-container {
+    display: none !important;
+}
+
+/* Hide Back and Forward navigation buttons */
+#back-button,
+#forward-button {
+    display: none !important;
+}
+/* Remove extra padding/margin from left side of navigation bar */
+#nav-bar {
+    padding-left: 0 !important;
+}
+
+#unified-extensions-button {
+    display: none !important;
+}
+
+#star-button-box {
+    display: none !important;
+}
+
+/* Hide all page action buttons (e.g., bookmark, share, etc.) */
+.urlbar-page-action,
+#pageActionSeparator,
+#identity-box,
+#tracking-protection-icon-container,
+#notification-popup-box,
+#reader-mode-button,
+#permissions-granted-icon,
+#extension-icon,
+#identity-icon,
+#connection-icon,
+#security-button,
+#remote-control-box {
+    display: none !important;
+}
+
+/* Optional: remove padding around the URL bar for tighter look */
+#urlbar {
+    padding-inline-start: 0px !important;
+    padding-inline-end: 0px !important;
+}
+
+/* Remove bottom border/shadow under the navigation bar */
+#navigator-toolbox {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Optional: remove padding/margin from left side of nav bar */
+#nav-bar {
+    display: flex !important;
+    flex-direction: row !important;
+}

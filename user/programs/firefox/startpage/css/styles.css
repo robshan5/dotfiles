@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital@0;1&family=Space+Mono:wght@700&display=swap');
+
+
+:root,
+:root.twilight {
+    --background-color: #141619; /* Dark background for One Dark theme */
+    --header-color: #e06c75;     /* Soft red color for headers */
+    --status-color: #abb2bf;     /* Light grayish for status text */
+    --title-color: #e5c07b;      /* Warm yellowish tone for titles */
+    --link-color: #61afef;       /* Soft cyan for links */
+    --hover-color: #3e4451;      /* Darker hover effect */
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    height: 100vh;
+    background-color: var(--background-color);
+}
+
+
+.header-container{
+    text-align: center;
+}
+
+h1 {
+    color: var(--header-color);
+    font-family: 'Space Mono', monospace;
+    font-size: 5rem;
+    margin-right: 20vh;
+    margin-left: 10vh;
+    white-space: nowrap;
+}
+
+.status-strip {
+    margin-right: 14vh;
+    margin-top: 1vh;
+    margin-bottom: 8vh;
+    color:var(--status-color);
+    font-family: 'Overpass', sans-serif;
+    font-size: 1.5rem;
+}
+
+span {
+    margin-left: 2vh;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+    width: 15vh;
+    height: 30vh;
+    text-align: center;
+}
+
+.title {
+    margin-top: 2vh;
+    font-family: 'Space Mono', monospace;
+    color: var(--title-color);
+    font-size: 1.3rem;
+    padding-left: 30px;
+    white-space: nowrap;
+}
+
+a {
+    font-family: 'Overpass', sans-serif;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--status-color);
+    margin-top: 2vh;
+}
+
+a:hover {
+    
+    color: var(--hover-color);
+}
+
+img {
+    grid-column: 3;
+    border-radius: 8px;
+    grid-row: 2;
+    justify-self: end;
+    width: 105%;
+    height: 100%;
+    margin-right: 20vh;
+    content: var(--image);
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.12); */
+    object-fit: cover;
+}
+
+.grow { 
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+    
+.grow:hover { 
+    transform: scale(1.1); 
+    cursor: pointer;
+}
+
+.container a {
+    padding-left: 20px;  /* Adds space to the left of links */
+}
+
+/* Optional: Adjust padding for the entire content-container */
+.content-container {
+    grid-column: 1;
+    grid-row: 2;
+    padding-left: 20px;  /* Adjust if you want the whole content container to have padding */
+}
+
+/* Optional: Slight padding on the card container for better spacing */
+.card-container {
+    height: 30vh;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    padding-left: 50px;
+}

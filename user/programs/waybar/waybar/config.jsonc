@@ -1,0 +1,151 @@
+{
+    "layer": "top", 
+    "position": "top",
+    "modules-left": ["hyprland/window", "mpris"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["disk", "group/audio", "backlight", "tray", "battery", "clock"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "disable-scroll": true,
+        "format-icons": {
+            "1": " ",
+            "2": " ",
+            "3": " ",
+            "4": " ",
+            "5": " ",
+        },
+        "persistent-workspaces": {
+            "eDP-1": [1,2,3,4,5]
+        }
+    },
+
+    "clock": {
+        "format": "   {:%a, %d %b %H:%M} ",
+        "tooltip": true,
+        "tooltip-format": "<span>{calendar}</span>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#e06c75'><b>{}</b></span>",
+                "days": "<span color='#abb2bf'><b>{}</b></span>",
+                "weekdays": "<span color='#4fa6ed'><b>{}</b></span>",
+                "today": "<span color='#e5c075'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "cpu": {
+        "format": "  {usage}% ",
+        "tooltip": true,
+        "max-length": 50
+    },
+
+    "memory": {
+        "format": "  {used} MiB ",
+        "tooltip": true,
+        "interval": 5
+    },
+
+    "disk": {
+        "format": "  {free} ",
+        "interval": 10,
+        "tooltip": false,
+    },
+
+    "pulseaudio": {
+        "format": "   {volume}% {icon}",
+        "format-muted": "  Muted {icon}",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+        "scroll-step": 0.25,
+        "max-volume": 100,
+        "reverse-scrolling": true,
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+    },
+
+    "group/audio": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": false
+        },
+        "modules": ["pulseaudio", "pulseaudio/slider"],
+    },
+
+    "network": {
+        "format": "   {bandwidthTotalBytes}",
+        "tooltip": true,
+        "interval": 1,
+        "tooltip-format": "{essid}",
+    },
+
+    "tray": {
+        "icon-size": 18,
+    },
+
+    "group/network": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": false
+        },
+        "modules": ["network", "tray"],
+    },
+
+    "hyprland/window": {
+        "format": " {initialTitle} ",
+    },
+
+    "battery": {
+        "format": " {icon} {capacity}% ",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 30,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "bat": "BAT1",
+        "format-charging": "  {capacity}% ",
+        "format-plugged": "  {capacity}% ",
+        // "format-alt": " {time} remaining ",
+    },
+
+    "mpris": {
+        "title-len": 40,
+        "interval":1,
+        "album-len":0,
+        "max-len": 60,
+        "max-empty-time": 60,
+        "format": "{player_icon} {artist} - {title}",
+        "format-paused": "{player_icon} {artist} - {title}",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵",
+            "spotify": " ",
+            "spotify-player": " ",
+            "firefox": "",
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        "player": "spotify"
+    },
+
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": " {icon} {percent}% ",
+        "format-icons": [""],
+        "reverse-scrolling": true,
+        "scroll-step": 0.25,
+        "tooltip": false,
+    },
+}
+

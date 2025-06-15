@@ -1,0 +1,72 @@
+@define-color background #141619;
+@define-color foreground #abb2bf;
+@define-color muted #e06c75;
+@define-color active #e5c075;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    background-color: transparent;
+    padding: 2px 4px;
+}
+
+#workspaces,
+#network,
+#tray,
+#group-audio,
+#pulseaudio-slider,
+#mpris,
+#disk,
+#pulseaudio,
+#backlight,
+#battery,
+#window,
+#clock{
+    padding: 0 4px;
+    margin: -2px 2px;
+    border-radius: 20px;
+    background: @background;
+    color: @foreground;
+    /*border: 2px solid #665c54;*/
+}
+
+#workspaces button {
+    color: @foreground;
+}
+
+#workspaces button.active {
+    color: @active;
+}
+
+#pulseaudio.muted {
+    background: @muted;
+    color: @background;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 5px;
+    min-width: 60px;
+    border-radius: 5px;
+    background-color: black;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: @foreground;
+}
+
+tooltip {
+    background-color: @background;
+    color: @foreground;
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 13px;
+}

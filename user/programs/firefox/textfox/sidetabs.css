@@ -1,0 +1,36 @@
+/* ########  Sidetabs Styles  ######### */
+
+/* ~~~~~~~~ Autohiding styles ~~~~~~~~~ */
+:root {
+ --sidebar-hover-width: 36px;
+}
+
+#sidebar-box[sidebarcommand="_ccc8cbaa-3c36-46d1-b0ae-d5e122755901_-sidebar-action"] {
+ display: grid !important;
+ min-width: var(--sidebar-hover-width) !important;
+ max-width: var(--sidebar-hover-width) !important;
+ width: var(--sidebar-hover-width) !important;
+ overflow: visible !important;
+ will-change: auto !important;
+ height: 100% !important;
+ min-height: 100% !important;
+ max-height: 100% !important;
+
+}
+#sidebar-box[sidebarcommand="_ccc8cbaa-3c36-46d1-b0ae-d5e122755901_-sidebar-action"] #sidebar {
+ height: 100% !important;
+ width: 60% !important;
+ 
+ position: absolute !important;
+ min-width: 0 !important;
+}
+/* ~~~~~~~~ Hidden elements styles ~~~~~~~~~ */
+#TabsToolbar {
+	display: none !important;
+}
+#sidebar-box[sidebarcommand="_ccc8cbaa-3c36-46d1-b0ae-d5e122755901_-sidebar-action"] #sidebar-header {
+	display: none !important;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* #################################### */

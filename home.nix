@@ -78,7 +78,6 @@
         blueman
         kdePackages.kwallet-pam
         volumeicon
-        flameshot
 
         brightnessctl
         playerctl
@@ -87,7 +86,6 @@
         wine
         glxinfo
 
-        androidenv.androidPkgs.emulator
 
         nerd-fonts.jetbrains-mono
         nerd-fonts.recursive-mono

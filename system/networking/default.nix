@@ -11,4 +11,7 @@
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
+
+    # allow phone to access ports for expo
+    networking.firewall.allowedTCPPorts = [ 19000 19001 19002 ];
 }

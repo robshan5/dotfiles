@@ -2,12 +2,12 @@
 See the above repository for updates as well as full license text. */
 
 #urlbar:not([focused]) #urlbar-input, /* ID for Firefox 70 */
-#urlbar:not([focused]) .urlbar-input{ text-align: left !important; }
+#urlbar:not([focused]) .urlbar-input{ text-align: center !important; }
 
 /* Make URL bar centered and shrink width */
 #urlbar-container {
     flex-grow: 0 !important;
-    min-width: 700px !important;
+    min-width: auto !important;
     margin: auto !important;
 }
 

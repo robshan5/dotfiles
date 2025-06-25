@@ -41,6 +41,9 @@
         obsidian
         ffmpeg
 
+        #image viewer
+        nomacs
+
         #lock screen
         hyprlock
 

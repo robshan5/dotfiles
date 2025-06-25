@@ -13,5 +13,5 @@
     services.printing.enable = true;
 
     # allow phone to access ports for expo
-    networking.firewall.allowedTCPPorts = [ 19000 19001 19002 ];
+    networking.firewall.allowedTCPPorts = [ 8080 8081 8082 ];
 }

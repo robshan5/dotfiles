@@ -6,7 +6,7 @@ See the above repository for updates as well as full license text. */
 
 /* Make URL bar centered and shrink width */
 #urlbar-container {
-    flex-grow: 0 !important;
+    flex-grow: 1 !important;
     min-width: auto !important;
     margin: auto !important;
 }
@@ -17,7 +17,8 @@ See the above repository for updates as well as full license text. */
     padding-right: 0 !important;
     height: 40px !important;
     display: flex !important;
-    align-items: center !important;
+    align-items: left !important;
+    background-image: none !important;
 }
 
 /* Move the application menu button (hamburger) to the left of the URL bar */
@@ -25,3 +26,7 @@ See the above repository for updates as well as full license text. */
     order: -1 !important;
     margin-inline-end: 0px !important;
 }
+
+#search-container{
+    min-width: max(75, 10vw) !important;
+} 

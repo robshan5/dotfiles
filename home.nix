@@ -62,6 +62,7 @@
         zip
         zoxide
         wayland-utils
+        devenv
 
         ##wallpapers
         hyprpaper

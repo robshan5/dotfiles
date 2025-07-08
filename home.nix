@@ -62,7 +62,6 @@
         zip
         zoxide
         wayland-utils
-        devenv
 
         ##wallpapers
         hyprpaper
@@ -94,6 +93,7 @@
         nerd-fonts.jetbrains-mono
         nerd-fonts.recursive-mono
     ];
+
 
     home.file = {
     };

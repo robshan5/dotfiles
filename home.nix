@@ -62,6 +62,8 @@
         zip
         zoxide
         wayland-utils
+        htop
+        btop
 
         ##wallpapers
         hyprpaper

@@ -85,6 +85,8 @@ in
             molten-nvim
             image-nvim
             diagflow-nvim
+            typst-vim
+            typst-preview-nvim
         ];
     };
 }

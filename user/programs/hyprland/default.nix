@@ -115,6 +115,12 @@ in
                 # floating toggle
                 "${super}, space, togglefloating"
 
+                #resize window
+                "${super}+${alt}, h, resizeactive, -10 0"
+                "${super}+${alt}, j, resizeactive, 0 -10"
+                "${super}+${alt}, k, resizeactive, 0 10"
+                "${super}+${alt}, l, resizeactive, 10 0"
+
                 # restart (no direct swaymsg equivalent)
                 "${super}+SHIFT, r, exec, hyprctl reload"
 

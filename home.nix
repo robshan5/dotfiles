@@ -39,6 +39,7 @@
         spotify
         libreoffice
         obsidian
+        typst
         ffmpeg
 
         #image viewer

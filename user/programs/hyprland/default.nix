@@ -24,6 +24,7 @@ in
                 "blueman"
                 "flameshot"
                 "playerctld daemon"
+                "export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH"
             ];
             input = {
                 kb_layout = "gb";

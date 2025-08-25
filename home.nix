@@ -41,6 +41,7 @@
         obsidian
         typst
         ffmpeg
+        unityhub
 
         #image viewer
         nomacs

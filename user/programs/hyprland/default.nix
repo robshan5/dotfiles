@@ -54,7 +54,7 @@ in
                 "workspace 1,class:^(firefox)$"
                 "workspace 2,class:^(kitty)$"
                 "workspace 3,class:^(obsidian)$"
-                "workspace 4,class:^(spotify)$"
+                "workspace 4,class:^(LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify)$"
                 "workspace 5,class:^(transmission-gtk)$"
             ];
             bind = [
@@ -121,6 +121,9 @@ in
                 "${super}+${alt}, j, resizeactive, 0 -10"
                 "${super}+${alt}, k, resizeactive, 0 10"
                 "${super}+${alt}, l, resizeactive, 10 0"
+
+                "${super}, left, movewindow"
+                "${super}, right, resizeactive"
 
                 # restart (no direct swaymsg equivalent)
                 "${super}+SHIFT, r, exec, hyprctl reload"

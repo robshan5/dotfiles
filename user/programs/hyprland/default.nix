@@ -57,6 +57,13 @@ in
                 "workspace 4,class:^(LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify)$"
                 "workspace 5,class:^(transmission-gtk)$"
             ];
+            binde = [
+                #resize window
+                "${super}+${alt}, h, resizeactive, -15 0"
+                "${super}+${alt}, j, resizeactive, 0 -15"
+                "${super}+${alt}, k, resizeactive, 0 15"
+                "${super}+${alt}, l, resizeactive, 15 0"
+            ];
             bind = [
                 # program keybindings
                 "${super}+SHIFT, RETURN, exec, firefox"
@@ -115,15 +122,6 @@ in
 
                 # floating toggle
                 "${super}, space, togglefloating"
-
-                #resize window
-                "${super}+${alt}, h, resizeactive, -10 0"
-                "${super}+${alt}, j, resizeactive, 0 -10"
-                "${super}+${alt}, k, resizeactive, 0 10"
-                "${super}+${alt}, l, resizeactive, 10 0"
-
-                "${super}, left, movewindow"
-                "${super}, right, resizeactive"
 
                 # restart (no direct swaymsg equivalent)
                 "${super}+SHIFT, r, exec, hyprctl reload"

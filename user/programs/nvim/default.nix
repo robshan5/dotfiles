@@ -68,7 +68,6 @@ in
             nvim-lspconfig
             lualine-nvim
             neo-tree-nvim
-            neorg
             noice-nvim
             nord-nvim
             nvim-notify

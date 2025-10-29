@@ -28,6 +28,7 @@
         waybar
 
         #programs
+        chromium
         kitty
         firefox
         zsh
@@ -41,7 +42,6 @@
         obsidian
         typst
         ffmpeg
-        unityhub
 
         #image viewer
         nomacs
@@ -64,8 +64,9 @@
         zip
         zoxide
         wayland-utils
-        htop
         btop
+        openssh
+        sshfs
 
         ##wallpapers
         hyprpaper

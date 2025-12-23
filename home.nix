@@ -97,8 +97,9 @@
 
         nerd-fonts.jetbrains-mono
         nerd-fonts.recursive-mono
+        roboto
+        source-sans-pro
     ];
-
 
     home.file = {
     };

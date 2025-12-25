@@ -25,8 +25,13 @@
                 robertNix = lib.nixosSystem {
                     inherit system;
                     modules = [
-                        ./configuration.nix
-                        inputs.stylix.nixosModules.stylix
+                        ./hosts/robshan.nix
+                    ];
+                };
+                nixos = lib.nixosSystem {
+                    inherit system;
+                    modules = [
+                        ./hosts/nix_server.nix
                     ];
                 };
             };

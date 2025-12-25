@@ -9,12 +9,9 @@
         [ # Include the results of the hardware scan.
             ./hardware-configuration.nix
             ./system/keyboard/default.nix
-            ./system/audio/default.nix
             ./system/bootloader/default.nix
             ./system/networking/default.nix
             ./system/time/default.nix
-            ./system/users/default.nix
-            ./system/wm/default.nix
         ];
 
     programs.zsh.enable = true;

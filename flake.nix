@@ -25,13 +25,13 @@
                 robertNix = lib.nixosSystem {
                     inherit system;
                     modules = [
-                        ./hosts/robshan.nix
+                        ./hosts/robertNix.nix
                     ];
                 };
                 nixos = lib.nixosSystem {
                     inherit system;
                     modules = [
-                        ./hosts/nix_server.nix
+                        ./hosts/nixos.nix
                     ];
                 };
             };

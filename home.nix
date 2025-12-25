@@ -3,6 +3,7 @@
 {
     imports = [
         ./user/programs/nvim/default.nix
+        ./user/programs/zsh/default.nix
         ./user/programs/packages.nix
     ];
 

@@ -38,7 +38,7 @@
                             home.username = "robshan";
                             home.homeDirectory = "/home/robshan";
                         }
-                        ./robshan.nix
+                        ./accounts/robshan.nix
                     ];
                     extraSpecialArgs = {inherit inputs; };
                 };
@@ -50,7 +50,7 @@
                             home.username = "nix_server";
                             home.homeDirectory = "/home/nix_server";
                         }
-                        ./nix_server.nix
+                        ./accounts/nix_server.nix
                     ];
                     extraSpecialArgs = {inherit inputs; };
                 };

@@ -10,8 +10,8 @@
         ../user/programs/waybar/default.nix
         ../user/programs/firefox/default.nix
         ../user/programs/dunst/default.nix
+        ../user/programs/ssh/default.nix
     ];
-
 
     nixpkgs.config.allowUnfreePredicate = _: true;
     home.packages = with pkgs; [
@@ -68,7 +68,6 @@
         cargo
         wine
         glxinfo
-
 
         nerd-fonts.jetbrains-mono
         nerd-fonts.recursive-mono

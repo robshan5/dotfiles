@@ -7,7 +7,6 @@
 {
     imports =
         [ # Include the results of the hardware scan.
-            ./hardware-configuration.nix
             ./system/keyboard/default.nix
             ./system/bootloader/default.nix
             ./system/networking/default.nix

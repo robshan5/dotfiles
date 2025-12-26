@@ -14,5 +14,6 @@
         openssh
         sshfs
         tree
+        starship
     ];
 }

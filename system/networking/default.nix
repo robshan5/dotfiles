@@ -1,6 +1,5 @@
 {input, pkgs, config, ...}:
 {
-    networking.hostName = "robertNix"; # Define your hostname.
 
     # Enable networking
     networking.networkmanager.enable = true;

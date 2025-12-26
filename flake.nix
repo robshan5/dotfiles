@@ -28,6 +28,7 @@
                         ./hosts/robertNix.nix
                     ];
                 };
+
                 nixos = lib.nixosSystem {
                     inherit system;
                     modules = [

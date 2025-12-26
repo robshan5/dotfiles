@@ -13,5 +13,6 @@
         btop
         openssh
         sshfs
+        tree
     ];
 }

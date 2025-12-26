@@ -21,6 +21,7 @@
             cShell = import ./user/development/c-shell.nix {inherit pkgs;};
             # pythonShell = import ./user/development/python-shell.nix {inherit pkgs;};
         in {
+            # SYSTEM ACCOUNTS
             nixosConfigurations = {
                 robertNix = lib.nixosSystem {
                     inherit system;
@@ -36,6 +37,8 @@
                     ];
                 };
             };
+
+            # HOME MANAGER ACCOUNTS
             homeConfigurations = {
                 robshan = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;

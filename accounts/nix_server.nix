@@ -6,7 +6,6 @@
     ];
 
     home.packages = with pkgs; [
-        openssh
         jellyfin
         jellyfin-web
         jellyfin-ffmpeg

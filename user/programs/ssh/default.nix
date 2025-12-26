@@ -3,8 +3,8 @@
 {
     programs.ssh = {
         extraConfig = "
-            Host nix_server
-                Hostname nixos
+            Host server
+                Hostname server
                 Port 5432
                 User nix_server
             ";

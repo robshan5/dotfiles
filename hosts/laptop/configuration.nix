@@ -1,7 +1,7 @@
 { ... }:
 
 {
-    networking.hostName = "nix_laptop"; # Define your hostname.
+    networking.hostName = "laptop"; # Define your hostname.
 
     imports = [
         ./hardware-configuration.nix

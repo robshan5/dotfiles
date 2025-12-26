@@ -1,7 +1,8 @@
 { ... }:
 
 {
-    networking.hostName = "nixos"; # Define your hostname.
+    networking.hostName = "server"; # Define your hostname.
+
     imports = [
         ../../configuration.nix
         ../../system/users/nix_server.nix

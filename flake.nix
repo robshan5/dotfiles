@@ -23,17 +23,17 @@
         in {
             # SYSTEM ACCOUNTS
             nixosConfigurations = {
-                robertNix = lib.nixosSystem {
+                laptop = lib.nixosSystem {
                     inherit system;
                     modules = [
-                        ./hosts/robertNix.nix
+                        ./hosts/laptop/configuration.nix
                     ];
                 };
 
-                nixos = lib.nixosSystem {
+                server = lib.nixosSystem {
                     inherit system;
                     modules = [
-                        ./hosts/nixos.nix
+                        ./hosts/server/configuration.nix
                     ];
                 };
             };

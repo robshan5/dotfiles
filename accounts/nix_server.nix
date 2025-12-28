@@ -12,5 +12,6 @@
         tmux
         kitty
         starship
+        nextcloud31
     ];
 }

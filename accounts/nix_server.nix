@@ -10,5 +10,7 @@
         jellyfin-web
         jellyfin-ffmpeg
         tmux
+        kitty
+        starship
     ];
 }

@@ -5,6 +5,7 @@
         ./user/programs/nvim/default.nix
         ./user/programs/zsh/default.nix
         ./user/programs/packages.nix
+        ./user/programs/kitty/default.nix
     ];
 
     home.stateVersion = "25.05"; # Please read the comment before changing.

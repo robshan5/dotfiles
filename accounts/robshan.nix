@@ -4,7 +4,6 @@
     imports = [
         ../home.nix
         ../user/programs/hyprland/default.nix
-        ../user/programs/kitty/default.nix
         ../user/programs/rofi/default.nix
         ../user/programs/yazi/default.nix
         ../user/programs/waybar/default.nix
@@ -46,7 +45,6 @@
         ##wallpapers
         hyprpaper
 
-        # starship
         wl-clipboard
         xwayland
         gtk-layer-shell

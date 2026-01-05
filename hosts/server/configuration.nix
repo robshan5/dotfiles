@@ -10,5 +10,6 @@
         ../../system/jellyfin/default.nix
         ../../system/transmission/default.nix
         ../../system/ssh/default.nix
+        ../../system/nextcloud/default.nix
     ];
 }

@@ -10,5 +10,8 @@
         jellyfin-web
         jellyfin-ffmpeg
         tmux
+        kitty
+        starship
+        nextcloud31
     ];
 }

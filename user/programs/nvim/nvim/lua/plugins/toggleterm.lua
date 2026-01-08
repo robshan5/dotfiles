@@ -8,7 +8,7 @@ return {
 			size = vim.o.columns * 0.4,
 			persist_size = false,
 			open_mapping = [[<c-/>]],
-			direction = "floating",
+			direction = "float",
 			start_in_insert = true,
 			close_on_exit = true,
 			persist_size = true,

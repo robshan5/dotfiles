@@ -29,7 +29,7 @@ return {
 		})
 		-- for each new lsp, add it to the list
 		-- luals and pyright were removed because they were not being loaded
-		local servers = { "clangd", "julials", "jdtls", "jsonls", "eslint" }
+		local servers = { "luals", "pyright", "clangd", "julials", "jdtls", "jsonls", "eslint" }
 		for _, lsp in pairs(servers) do
 			lspconfig[lsp].setup({
 				on_attach = on_attach,

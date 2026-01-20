@@ -51,6 +51,7 @@
         noto-fonts
         font-awesome
         jq
+        poppler-utils
 
         ##networking
         networkmanagerapplet

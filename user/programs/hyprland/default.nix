@@ -2,7 +2,7 @@
 let
     super = "Mod4";
     alt = "Mod1";
-    wallpaper = "$HOME/Pictures/walls/digital/a_city_in_the_rain.jpeg";
+    wallpaper = "$HOME/Pictures/walls/retro/a_computer_screen_with_a_logo.png";
 in
     {
     wayland.windowManager.hyprland = {

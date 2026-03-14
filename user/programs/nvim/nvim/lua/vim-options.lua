@@ -5,4 +5,6 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("set cursorline")
-vim.g.molten_python = 1
+vim.cmd([[
+  autocmd FileType magma setlocal filetype=python
+]])

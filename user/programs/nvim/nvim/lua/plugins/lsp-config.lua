@@ -3,23 +3,27 @@ return {
 	lazy = false,
 	config = function()
 		local border_opts = { border = "single", focusable = false }
+
 		local function set_floating_border(opts)
 			return vim.lsp.with(vim.lsp.handlers.hover, vim.tbl_extend("force", opts or {}, border_opts))
 		end
+
 		vim.lsp.handlers["textDocument/hover"] = set_floating_border()
 		vim.lsp.handlers["textDocument/signatureHelp"] = set_floating_border()
 		vim.lsp.handlers["textDocument/definition"] = set_floating_border()
 		vim.lsp.handlers["textDocument/references"] = set_floating_border()
+
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
-		local lspconfig = require("lspconfig")
+
 		local on_attach = function(client, bufnr)
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr })
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr })
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { buffer = bufnr })
 		end
-		lspconfig.nixd.setup({
+
+		-- nixd config
+		vim.lsp.config("nixd", {
 			capabilities = capabilities,
-			lspconfig = lspconfig,
 			on_attach = on_attach,
 			settings = {
 				nix = {
@@ -27,14 +31,19 @@ return {
 				},
 			},
 		})
-		-- for each new lsp, add it to the list
-		local servers = { "luals", "pyright", "clangd", "julials", "jdtls", "jsonls", "eslint" }
-		for _, lsp in pairs(servers) do
-			lspconfig[lsp].setup({
+
+		-- other servers
+		local servers = { "lua_ls", "pyright", "clangd", "julials", "jdtls", "jsonls", "eslint" }
+
+		for _, server in ipairs(servers) do
+			vim.lsp.config(server, {
 				on_attach = on_attach,
-				capabilites = capabilities,
-				lspconfig = lspconfig,
+				capabilities = capabilities,
 			})
 		end
+
+		-- enable them
+		vim.lsp.enable("nixd")
+		vim.lsp.enable(servers)
 	end,
 }

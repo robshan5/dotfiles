@@ -14,15 +14,10 @@ in
             #nix
             nil
             nixd
-            #java
-            openjdk23
-            jdt-language-server
-            astyle
             #python
-            pyright
-            black
-            isort
-            python311Packages.pip
+            # pyright
+            # black
+            # isort
             #c
             clang
             clang-tools
@@ -44,19 +39,6 @@ in
         viAlias = true;
         vimAlias = true;
 
-        extraPackages = with pkgs; [
-            imagemagick
-        ];
-        extraPython3Packages = ps: with ps; [
-            pynvim
-            ipykernel
-            ipython
-            jupyter-client
-            cairosvg
-            pnglatex
-            plotly
-            pyperclip
-        ];
         plugins = with pkgs.vimPlugins; [
             alpha-nvim
             nvim-autopairs

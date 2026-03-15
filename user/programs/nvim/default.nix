@@ -49,6 +49,8 @@ in
         ];
         extraPython3Packages = ps: with ps; [
             pynvim
+            ipykernel
+            ipython
             jupyter-client
             cairosvg
             pnglatex
@@ -81,11 +83,23 @@ in
             nvim-snippy
             cmp-snippy
             gruvbox-nvim
-            molten-nvim
             image-nvim
             diagflow-nvim
             typst-vim
             typst-preview-nvim
+
+            # magma-nvim
+            (pkgs.vimUtils.buildVimPlugin {
+                pname = "magma-nvim";
+                version = "latest";
+
+                src = pkgs.fetchFromGitHub {
+                    owner = "robshan5";
+                    repo = "magma-nvim";
+                    rev = "master";
+                    sha256 = "1hvnyips9pb9kjb2wy9gxg8b4qiwmp9pf1jab64gzc10r2ax4hgi";
+                };
+            })
         ];
     };
 }

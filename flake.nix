@@ -6,10 +6,14 @@
         nixpkgs.url = "nixpkgs/nixos-25.05";
         home-manager.url = "github:nix-community/home-manager/release-25.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
-        textfox.url = "github:adriankarlen/textfox";
-        stylix = {
-            url = "github:nix-community/stylix/release-25.05";
-            inputs.nixpkgs.follows = "nixpkgs";
+        zen-browser = {
+            url = "github:0xc000022070/zen-browser-flake";
+            inputs = {
+                # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
+                # to have it up-to-date or simply don't specify the nixpkgs input
+                nixpkgs.follows = "nixpkgs";
+                home-manager.follows = "home-manager";
+            };
         };
     };
 

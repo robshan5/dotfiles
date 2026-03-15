@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
     imports = [
@@ -10,7 +10,10 @@
         ../user/programs/firefox/default.nix
         ../user/programs/dunst/default.nix
         ../user/programs/ssh/default.nix
+        inputs.zen-browser.homeModules.beta
     ];
+
+    programs.zen-browser.enable = true;
 
     nixpkgs.config.allowUnfreePredicate = _: true;
     home.packages = with pkgs; [

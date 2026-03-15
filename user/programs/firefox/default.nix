@@ -7,5 +7,5 @@
     #   };    
     # };
     programs.firefox.enable = true;
-    home.file.".mozilla/firefox/i0cfh61j.default/chrome".source = ./chrome;
+    # home.file.".mozilla/firefox/i0cfh61j.default/chrome".source = ./chrome;
 }

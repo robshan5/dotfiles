@@ -1,6 +1,7 @@
 { ... }:
 
 {
+    environment.etc."nextcloud-admin-pass".text = "PWD";
     services.nextcloud = {
         enable = true;
         hostName = "nextcloud.local";       
@@ -11,6 +12,12 @@
             dbtype = "sqlite";
             adminuser = "admin";
             adminpassFile = "/var/lib/nextcloud/admin-pass";
+        };
+        settings = {
+            trusted_domains = [
+                "192.168.15.217"
+                "localhost"
+            ];
         };
     };
 

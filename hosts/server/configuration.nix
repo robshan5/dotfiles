@@ -11,5 +11,6 @@
         ../../system/transmission/default.nix
         ../../system/ssh/default.nix
         ../../system/nextcloud/default.nix
+        ../../system/tailscale/default.nix
     ];
 }

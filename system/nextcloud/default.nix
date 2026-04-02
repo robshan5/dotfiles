@@ -1,19 +1,34 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
     services.nextcloud = {
         enable = true;
-        hostName = "nextcloud.local";       
+        package = pkgs.nextcloud31;
+        hostName = "localhost";
+        config.adminpassFile = "/etc/nextcloud-admin-pass";
+        config.dbtype = "sqlite";
 
-        database.createLocally = true;
-
-        config = {
-            dbtype = "sqlite";
-            adminuser = "admin";
-            adminpassFile = "/var/lib/nextcloud/admin-pass";
+        settings = {
+            trusted_domains = [
+                "192.168.15.217"
+                "localhost"
+            ];
         };
     };
 
-    services.nginx.enable = true;
-    networking.firewall.allowedTCPPorts = [ 80 442 ];
+    environment.etc."nextcloud-admin-pass".text = "PWD";
+    networking.firewall.allowedTCPPorts = [ 80 443 ];
+
+
+    virtualisation.oci-containers = {
+        backend = "docker"; # or "podman"
+
+            containers.collabora = {
+                image = "collabora/code";
+                ports = [ "9980:9980" ];
+                environment = {
+                    domain = "192\\.168\\.15\\.217"; # IMPORTANT: escaped dots
+                };
+            };
+    };
 }

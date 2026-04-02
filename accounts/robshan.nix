@@ -30,6 +30,7 @@
         obsidian
         typst
         ffmpeg
+        spyder
 
         #image viewer
         nomacs

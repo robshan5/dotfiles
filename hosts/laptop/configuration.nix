@@ -3,6 +3,11 @@
 {
     networking.hostName = "laptop"; # Define your hostname.
 
+  #   networking.extraHosts = ''
+  # 192.168.15.217 nextcloud.local
+  # 192.168.15.217 collabora.local
+  #   '';
+
     imports = [
         ./hardware-configuration.nix
         ../../configuration.nix

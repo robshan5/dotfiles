@@ -14,15 +14,10 @@ in
             #nix
             nil
             nixd
-            #java
-            openjdk23
-            jdt-language-server
-            astyle
             #python
-            pyright
-            black
-            isort
-            python311Packages.pip
+            # pyright
+            # black
+            # isort
             #c
             clang
             clang-tools
@@ -44,17 +39,6 @@ in
         viAlias = true;
         vimAlias = true;
 
-        extraPackages = with pkgs; [
-            imagemagick
-        ];
-        extraPython3Packages = ps: with ps; [
-            pynvim
-            jupyter-client
-            cairosvg
-            pnglatex
-            plotly
-            pyperclip
-        ];
         plugins = with pkgs.vimPlugins; [
             alpha-nvim
             nvim-autopairs
@@ -81,11 +65,23 @@ in
             nvim-snippy
             cmp-snippy
             gruvbox-nvim
-            molten-nvim
             image-nvim
             diagflow-nvim
             typst-vim
             typst-preview-nvim
+
+            # magma-nvim
+            (pkgs.vimUtils.buildVimPlugin {
+                pname = "magma-nvim";
+                version = "latest";
+
+                src = pkgs.fetchFromGitHub {
+                    owner = "robshan5";
+                    repo = "magma-nvim";
+                    rev = "master";
+                    sha256 = "1hvnyips9pb9kjb2wy9gxg8b4qiwmp9pf1jab64gzc10r2ax4hgi";
+                };
+            })
         ];
     };
 }

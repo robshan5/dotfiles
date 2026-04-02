@@ -2,7 +2,7 @@
 let
     super = "Mod4";
     alt = "Mod1";
-    wallpaper = "$HOME/Pictures/walls/digital/a_city_in_the_rain.jpeg";
+    wallpaper = "$HOME/Pictures/lwalpapers/wallpapers/b-229.jpg";
 in
     {
     wayland.windowManager.hyprland = {
@@ -50,10 +50,10 @@ in
             };
             windowrulev2 = [
                 "float,class:^(pavucontrol)$"
-                "workspace 1,class:^(firefox)$"
+                "workspace 1,class:^(zen-beta)$"
                 "workspace 2,class:^(kitty)$"
                 "workspace 3,class:^(obsidian)$"
-                "workspace 4,class:^(LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify)$"
+                "workspace 4,class:^(spotify)$"
                 "workspace 5,class:^(transmission-gtk)$"
             ];
             binde = [
@@ -63,9 +63,13 @@ in
                 "${super}+${alt}, k, resizeactive, 0 15"
                 "${super}+${alt}, l, resizeactive, 15 0"
             ];
+            bindm = [
+                "${super}, mouse:272, movewindow"
+                "${super}, mouse:273, resizewindow"
+            ];
             bind = [
                 # program keybindings
-                "${super}+SHIFT, RETURN, exec, firefox"
+                "${super}+SHIFT, RETURN, exec, zen-beta"
                 "${super}, RETURN, exec, kitty"
                 "${super}+CONTROL, RETURN, exec, obsidian"
                 "${super}, s, exec, LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"

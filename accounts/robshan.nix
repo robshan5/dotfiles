@@ -30,7 +30,7 @@
         obsidian
         typst
         ffmpeg
-        spyder
+        virtualbox
 
         #image viewer
         nomacs

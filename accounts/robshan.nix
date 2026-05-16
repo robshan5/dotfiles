@@ -73,6 +73,7 @@
         glxinfo
         parted
         file
+        hdparm
 
         nerd-fonts.jetbrains-mono
         nerd-fonts.recursive-mono

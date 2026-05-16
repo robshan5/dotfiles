@@ -19,7 +19,7 @@
     home.packages = with pkgs; [
         #status bars
         waybar
-
+ 
         #programs
         rofi
         vlc
@@ -71,6 +71,8 @@
         cargo
         wine
         glxinfo
+        parted
+        file
 
         nerd-fonts.jetbrains-mono
         nerd-fonts.recursive-mono

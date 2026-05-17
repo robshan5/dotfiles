@@ -19,7 +19,7 @@
     home.packages = with pkgs; [
         #status bars
         waybar
-
+ 
         #programs
         rofi
         vlc
@@ -30,6 +30,7 @@
         obsidian
         typst
         ffmpeg
+        virtualbox
 
         #image viewer
         nomacs
@@ -70,6 +71,9 @@
         cargo
         wine
         glxinfo
+        parted
+        file
+        hdparm
 
         nerd-fonts.jetbrains-mono
         nerd-fonts.recursive-mono

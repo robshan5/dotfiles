@@ -9,5 +9,6 @@
         ../../system/users/robshan.nix
         ../../system/wm/default.nix
         ../../system/audio/default.nix
+        ../../system/tailscale/client.nix
     ];
 }

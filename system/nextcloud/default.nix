@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+    environment.etc."nextcloud-admin-pass".text = "PWD";
     services.nextcloud = {
         enable = true;
         package = pkgs.nextcloud31;
@@ -8,6 +9,12 @@
         config.adminpassFile = "/etc/nextcloud-admin-pass";
         config.dbtype = "sqlite";
 
+        settings = {
+            trusted_domains = [
+                "192.168.15.217"
+                "localhost"
+            ];
+        };
         settings = {
             trusted_domains = [
                 "192.168.15.217"

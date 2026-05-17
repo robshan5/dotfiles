@@ -13,5 +13,6 @@
         kitty
         starship
         nextcloud31
+        btop
     ];
 }

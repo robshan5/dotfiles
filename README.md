@@ -1,4 +1,4 @@
-# dotfiles
+# Dotfiles
 
 My personal NixOS configuration, managed with Nix Flakes and Home Manager. The config is structured around separate host and user profiles, making it easy to replicate across multiple machines.
 
@@ -73,7 +73,7 @@ Apply the Home Manager config for your user:
 home-manager switch --flake .#[user]
 ```
 
-> Replace `[user]` with your username as defined in `accounts/`. For example: `.#rob`.
+> Replace `[user]` with your username as defined in `accounts/`. For example: `.#robshan`.
 
 ## Requirements
 

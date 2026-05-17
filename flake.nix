@@ -38,6 +38,13 @@
                         ./hosts/server/configuration.nix
                     ];
                 };
+		
+                desktop = lib.nixosSystem {
+                    inherit system;
+                    modules = [
+                        ./hosts/desktop/configuration.nix
+                    ];
+                };
             };
 
             # HOME MANAGER ACCOUNTS

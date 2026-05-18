@@ -13,12 +13,20 @@
     ];
 
     environment.sessionVariables = {
-        WLR_NO_HARDWARE_CURSORS = "1";
+        # WLR_NO_HARDWARE_CURSORS = "1";
         NIXOS_OZONE_WL = "1";
     };
 
     hardware = {
         graphics.enable = true;
         nvidia.modesetting.enable = true;
+        nvidia.open = false;
     };
+
+    programs.hyprland = {
+        # nvidiaPatches = true;
+        xwayland.enable = true;
+    };
+
+    services.xserver.videoDrivers = ["nvidia"];
 }

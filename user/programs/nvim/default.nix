@@ -51,6 +51,7 @@ in
             cmp-nvim-lsp
             nvim-lspconfig
             nvim-snippy
+            noice-nvim
 
             (pkgs.vimUtils.buildVimPlugin {
                 pname = "magma-nvim";

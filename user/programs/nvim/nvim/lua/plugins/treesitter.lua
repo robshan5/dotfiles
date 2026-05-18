@@ -1,9 +1,10 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "master",
 	lazy = false,
 	build = ":TSUpdate",
 	config = function()
-		local config = require("nvim-treesitter.configs")
+		local config = require("nvim-treesitter.config")
 		config.setup({
 			ensure_installed = { "regex", "bash" },
 			auto_install = true,

@@ -74,6 +74,7 @@
         parted
         file
         hdparm
+        gptfdisk
 
         nerd-fonts.jetbrains-mono
         nerd-fonts.recursive-mono

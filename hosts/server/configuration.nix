@@ -3,6 +3,11 @@
 {
     networking.hostName = "server"; # Define your hostname.
 
+    services.logind = {
+        lidSwitchExternalPower = "ignore";
+        lidSwitch = "ignore";
+    };
+
     imports = [
         ./hardware-configuration.nix
         ../../configuration.nix

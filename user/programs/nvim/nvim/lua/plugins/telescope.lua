@@ -15,6 +15,7 @@ return {
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 		end,
 	},
+
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
 		lazy = false,

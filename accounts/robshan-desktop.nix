@@ -31,6 +31,7 @@
         typst
         ffmpeg
         virtualbox
+        steam
 
         #image viewer
         nomacs

@@ -61,6 +61,18 @@
                     extraSpecialArgs = {inherit inputs; };
                 };
 
+                robshan-desktop = home-manager.lib.homeManagerConfiguration {
+                    inherit pkgs;
+                    modules = [
+                        {
+                            home.username = "robshan";
+                            home.homeDirectory = "/home/robshan";
+                        }
+                        ./accounts/robshan-desktop.nix
+                    ];
+                    extraSpecialArgs = {inherit inputs; };
+                };
+
                 nix_server = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [

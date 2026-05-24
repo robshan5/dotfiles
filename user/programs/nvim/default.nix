@@ -19,9 +19,10 @@ in
             # black
             # isort
             #c
-            clang
-            clang-tools
-            cmake
+            # clang
+            gcc
+            # clang-tools
+            # cmake
             gdb
             clang-tidy-sarif
             gnumake

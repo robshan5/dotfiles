@@ -18,7 +18,10 @@
     };
 
     hardware = {
-        graphics.enable = true;
+        graphics = {
+            enable = true;
+            enable32Bit = true;
+        };
         nvidia.modesetting.enable = true;
         nvidia.open = false;
     };

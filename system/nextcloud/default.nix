@@ -25,21 +25,6 @@
         };
     };
 
-<<<<<<< HEAD
-    services.nginx.enable = true;
-    # services.nginx.virtualHosts."cloud.robshan.space" = {
-    #     locations."/" = {
-    #         proxyPass = "http://127.0.0.1:8080";
-    #     #     proxyPreserveHost = true;
-    #     };
-    #     enableACME = true;
-    # };
-
-    # security.acme.certs."cloud.robshan.space".email = "robshanahan@duck.com";
-    # security.acme.acceptTerms = true;
-
-    networking.firewall.allowedTCPPorts = [ 80 442 ];
-=======
     environment.etc."nextcloud-admin-pass".text = "PWD";
     networking.firewall.allowedTCPPorts = [ 80 443 ];
 
@@ -55,5 +40,4 @@
                 };
             };
     };
->>>>>>> 2dee3162b60d1df27e8984644b6734f25ed72797
 }

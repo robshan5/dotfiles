@@ -13,7 +13,7 @@
                 # Allow queries from your LAN (adjust subnet if yours differs)
                 access-control = [
                     "127.0.0.0/8 allow"
-                    "192.168.0.0/16 allow"
+                    "192.168.15.217/24 allow"
                     "10.0.0.0/8 allow"
                     "::1/128 allow"
                 ];

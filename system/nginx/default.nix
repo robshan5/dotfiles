@@ -43,12 +43,12 @@
                     proxyWebsockets = true;
                 };
                 # gRPC endpoint used by headscale CLI / Tailscale clients
-                locations."/headscale.v1.HeadscaleService" = {
-                    proxyPass  = "grpc://127.0.0.1:50443";
-                    extraConfig = ''
-            grpc_set_header Host $host;
-                    '';
-                };
+                # locations."/headscale.v1.HeadscaleService" = {
+                    # proxyPass  = "grpc://127.0.0.1:50443";
+                    # extraConfig = ''
+            # grpc_set_header Host $host;
+                    # '';
+                # };
             };
 
         };

@@ -23,8 +23,8 @@
                 "https://controlplane.tailscale.com/derpmap/default"
             ];
 
-            grpc_listen_addr    = "127.0.0.1:50443";
-            grpc_allow_insecure = false;
+            # grpc_listen_addr    = "127.0.0.1:50443";
+            # grpc_allow_insecure = false;
         };
     };
 

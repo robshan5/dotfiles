@@ -1,43 +1,30 @@
-{ pkgs, ... }:
+{ pkgs, config,  ... }:
 
 {
-    environment.etc."nextcloud-admin-pass".text = "PWD";
-    services.nextcloud = {
-        enable = true;
-        package = pkgs.nextcloud31;
-        hostName = "localhost";
-        config.adminpassFile = "/etc/nextcloud-admin-pass";
-        config.dbtype = "sqlite";
+  services.nextcloud = {
+    enable   = true;
+    hostName = "nextcloud.robshan.space";
+    https    = true;
+    package  = pkgs.nextcloud29; # pin major version; bump intentionally
 
-        settings = {
-            trusted_domains = [
-                "192.168.15.217"
-                "localhost"
-            ];
-        };
-        settings = {
-            trusted_domains = [
-                "192.168.15.217"
-                "100.106.29.22"
-                "cloud.robshan.space"
-                "localhost"
-            ];
-        };
+    datadir = "/var/lib/nextcloud"; # change to a bigger disk if needed
+
+    config = {
+      adminuser     = "admin";
+      adminpassFile = "/etc/nextcloud-admin-pass";
+      dbtype        = "sqlite"; # fine for personal use
+                                 # see PostgreSQL section below for better perf
     };
 
-    environment.etc."nextcloud-admin-pass".text = "PWD";
-    networking.firewall.allowedTCPPorts = [ 80 443 ];
+    maxUploadSize = "16G";
+    nginx.recommendedHttpHeaders = true;
 
-
-    virtualisation.oci-containers = {
-        backend = "docker"; # or "podman"
-
-            containers.collabora = {
-                image = "collabora/code";
-                ports = [ "9980:9980" ];
-                environment = {
-                    domain = "192\\.168\\.15\\.217"; # IMPORTANT: escaped dots
-                };
-            };
-    };
+    extraAppsEnable = true;
+    extraApps = with config.services.nextcloud.package.packages.apps; [
+      calendar
+      contacts
+      notes
+      tasks
+    ];
+  };
 }

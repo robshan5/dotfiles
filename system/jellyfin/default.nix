@@ -19,6 +19,6 @@
         enableACME = true;
     };
 
-    security.acme.certs."jellyfin.robshan.space".email = "robshanahan@duck.com";
+    security.acme.certs."jellyfin.robshan.space".email = "robshanahan5@duck.com";
     security.acme.acceptTerms = true;
 }

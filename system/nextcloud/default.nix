@@ -18,6 +18,8 @@
         settings = {
             trusted_domains = [
                 "192.168.15.217"
+                "100.106.29.22"
+                "cloud.robshan.space"
                 "localhost"
             ];
         };

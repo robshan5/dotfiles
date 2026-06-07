@@ -199,7 +199,6 @@
         bluetoothctl connect 38:18:4C:17:DA:8A
       }
 
-
       # Returns the last 2 fields of the working directory
       pwdtail() {
         pwd | awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'
@@ -341,6 +340,8 @@
               echo "Failed to upload the document."
           fi
       }
+
+      export PATH=$PATH:"$HOME/.bin"
 
       #######################################################
       # Set the ultimate amazing command prompt

@@ -1,4 +1,4 @@
-# dotfiles
+# Dotfiles
 
 > Personal NixOS configuration managed with **Nix Flakes** and **Home Manager** — structured around separate host and user profiles for easy replication across machines.
 

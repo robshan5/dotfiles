@@ -14,5 +14,7 @@
         starship
         nextcloud31
         btop
+        openssl
+        nginx
     ];
 }

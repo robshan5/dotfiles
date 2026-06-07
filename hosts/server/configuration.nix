@@ -20,8 +20,11 @@
         ../../system/jellyfin/default.nix
         ../../system/transmission/default.nix
         ../../system/ssh/default.nix
+        #services
         ../../system/nextcloud/default.nix
         ../../system/tailscale/default.nix
+        ../../system/unbound/default.nix
+        ../../system/nginx/default.nix
     ];
 
     networking.firewall = {

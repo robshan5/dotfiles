@@ -5,7 +5,7 @@
     enable   = true;
     hostName = "nextcloud.robshan.space";
     https    = true;
-    package  = pkgs.nextcloud29; # pin major version; bump intentionally
+    package  = pkgs.nextcloud31; # pin major version; bump intentionally
 
     datadir = "/var/lib/nextcloud"; # change to a bigger disk if needed
 
@@ -20,11 +20,11 @@
     nginx.recommendedHttpHeaders = true;
 
     extraAppsEnable = true;
-    extraApps = with config.services.nextcloud.package.packages.apps; [
-      calendar
-      contacts
-      notes
-      tasks
-    ];
+    # extraApps = with config.services.nextcloud.package.packages.apps; [
+    #   calendar
+    #   contacts
+    #   notes
+    #   tasks
+    # ];
   };
 }

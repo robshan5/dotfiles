@@ -39,10 +39,10 @@
                 # Replace 192.168.1.x with your server's actual LAN IP!
                 local-zone = [ ''"robshan.space." static'' ];
                 local-data = [
-                    ''"robshan.space.            A 192.168.1.x"''   # <── change IP
-                    ''"nextcloud.robshan.space.  A 192.168.1.x"''   # <── change IP
-                    ''"jellyfin.robshan.space.   A 192.168.1.x"''   # <── change IP
-                    ''"headscale.robshan.space.  A 192.168.1.x"''   # <── change IP
+                    ''"robshan.space.            A 192.168.15.217"''   # <── change IP
+                    ''"nextcloud.robshan.space.  A 192.168.15.217"''   # <── change IP
+                    ''"jellyfin.robshan.space.   A 192.168.15.217"''   # <── change IP
+                    ''"headscale.robshan.space.  A 192.168.15.217"''   # <── change IP
                 ];
             };
 

@@ -10,9 +10,9 @@
             server_url  = "https://headscale.robshan.space";
             ip_prefixes = [ "100.64.0.0/10" "fd7a:115c:a1e0::/48" ];
 
-            dns_config = {
+            dns = {
                 override_local_dns = true;
-                nameservers        = [ "1.1.1.1" "8.8.8.8" ];
+                nameservers.global = [ "1.1.1.1" "8.8.8.8" ];
                 magic_dns          = true;
                 base_domain        = "robshan.space";
             };

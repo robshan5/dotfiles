@@ -38,6 +38,13 @@
                         ./hosts/server/configuration.nix
                     ];
                 };
+		
+                desktop = lib.nixosSystem {
+                    inherit system;
+                    modules = [
+                        ./hosts/desktop/configuration.nix
+                    ];
+                };
             };
 
             # HOME MANAGER ACCOUNTS
@@ -50,6 +57,18 @@
                             home.homeDirectory = "/home/robshan";
                         }
                         ./accounts/robshan.nix
+                    ];
+                    extraSpecialArgs = {inherit inputs; };
+                };
+
+                robshan-desktop = home-manager.lib.homeManagerConfiguration {
+                    inherit pkgs;
+                    modules = [
+                        {
+                            home.username = "robshan";
+                            home.homeDirectory = "/home/robshan";
+                        }
+                        ./accounts/robshan-desktop.nix
                     ];
                     extraSpecialArgs = {inherit inputs; };
                 };

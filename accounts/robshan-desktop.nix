@@ -31,7 +31,7 @@
         typst
         ffmpeg
         virtualbox
-        wine-wayland
+        steam
 
         #image viewer
         nomacs

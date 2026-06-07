@@ -19,9 +19,10 @@ in
             # black
             # isort
             #c
-            clang
-            clang-tools
-            cmake
+            # clang
+            gcc
+            # clang-tools
+            # cmake
             gdb
             clang-tidy-sarif
             gnumake
@@ -51,6 +52,7 @@ in
             cmp-nvim-lsp
             nvim-lspconfig
             nvim-snippy
+            noice-nvim
 
             (pkgs.vimUtils.buildVimPlugin {
                 pname = "magma-nvim";

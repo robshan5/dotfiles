@@ -41,4 +41,9 @@
             41641 # Headscale/Tailscale DERP (UDP)
         ];
     };
+
+    # fileSystems."/data/media/" = {
+    #     device = "/dev/disk/by-uuid/06cd3ee1-2254-4d35-bb87-a5e9cb852612";
+    #     fsType = "exfat";
+    # };
 }

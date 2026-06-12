@@ -88,6 +88,8 @@
             #kitty ssh
             kssh = "kitty +kitten ssh";
 
+            server-connect = "ssh nix_server@robshan.space -p 5432";
+            server-transmission = "ssh -L 9091:localhost:9091 nix_server@robshan.space -p 5432";
         };
         initContent = ''
       #disable the beep

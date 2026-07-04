@@ -72,7 +72,7 @@ in
                 "${super}+SHIFT, RETURN, exec, zen-beta"
                     "${super}, RETURN, exec, kitty"
                     "${super}+CONTROL, RETURN, exec, obsidian"
-                    "${super}, s, exec, LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
+                    "${super}, s, exec, LD_PRELOAD=/usr/local/lib/spotify-adblock.so && spotify"
                     "${super}, t, exec, transmission-gtk"
 
 # launcher

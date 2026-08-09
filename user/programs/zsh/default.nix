@@ -20,7 +20,6 @@
             ping = "ping -c 10";
             less = "less -R";
             multitail = "multitail --no-repeat -c";
-            deepseek = "ollama run deepseek-r1:7b";
             v = "nvim";
             sv = "sudo v";
             sd = "shutdown -h now";
@@ -88,9 +87,12 @@
             #kitty ssh
             kssh = "kitty +kitten ssh";
 
+            server-connect = "ssh nix_server@robshan.space -p 5432";
+            server-transmission = "ssh -L 9091:localhost:9091 nix_server@robshan.space -p 5432";
+
         };
         initContent = ''
-      #disable the beep
+        #disable the beep
       setopt NO_BEEP
       #case insensitive
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -204,87 +206,6 @@
         pwd | awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'
       }
 
-      # Show the current version of the operating system
-      ver() {
-        local dtype
-        dtype=$(distribution)
-
-        case $dtype in
-          "redhat")
-            if [ -s /etc/redhat-release ]; then
-              cat /etc/redhat-release
-            else
-              cat /etc/issue
-            fi
-            uname -a
-            ;;
-          "suse")
-            cat /etc/SuSE-release
-            ;;
-          "debian")
-            lsb_release -a
-            ;;
-          "gentoo")
-            cat /etc/gentoo-release
-            ;;
-          "arch")
-            cat /etc/os-release
-            ;;
-          "slackware")
-            cat /etc/slackware-version
-            ;;
-          *)
-            if [ -s /etc/issue ]; then
-              cat /etc/issue
-            else
-              echo "Error: Unknown distribution"
-              exit 1
-            fi
-            ;;
-        esac
-      }
-
-      # View Apache logs
-      apachelog() {
-        if [ -f /etc/httpd/conf/httpd.conf ]; then
-          cd /var/log/httpd && ls -xAh && multitail --no-repeat -c -s 2 /var/log/httpd/*_log
-        else
-          cd /var/log/apache2 && ls -xAh && multitail --no-repeat -c -s 2 /var/log/apache2/*.log
-        fi
-      }
-
-      # Edit the Apache configuration
-      apacheconfig() {
-        if [ -f /etc/httpd/conf/httpd.conf ]; then
-          sedit /etc/httpd/conf/httpd.conf
-        elif [ -f /etc/apache2/apache2.conf ]; then
-          sedit /etc/apache2/apache2.conf
-        else
-          echo "Error: Apache config file could not be found."
-          echo "Searching for possible locations:"
-          sudo updatedb && locate httpd.conf && locate apache2.conf
-        fi
-      }
-
-      # Edit the PHP configuration file
-      phpconfig() {
-        if [ -f /etc/php.ini ]; then
-          sedit /etc/php.ini
-        elif [ -f /etc/php/php.ini ]; then
-          sedit /etc/php/php.ini
-        elif [ -f /etc/php5/php.ini ]; then
-          sedit /etc/php5/php.ini
-        elif [ -f /usr/bin/php5/bin/php.ini ]; then
-          sedit /usr/bin/php5/bin/php.ini
-        elif [ -f /etc/php5/apache2/php.ini ]; then
-          sedit /etc/php5/apache2/php.ini
-        else
-          echo "Error: php.ini file could not be found."
-          echo "Searching for possible locations:"
-          sudo updatedb && locate php.ini
-        fi
-      }
-
       # Edit the MySQL configuration file
       mysqlconfig() {
         if [ -f /etc/my.cnf ]; then
@@ -306,6 +227,12 @@
         fi
       }
 
+    hman() {
+        home-manager switch --flake .#$1
+    }
+    rebuild(){
+        sudo nixos-rebuild switch --flake .#$1
+    }
 
       # Trim leading and trailing spaces (for scripts)
       #this broke with the initExtra so I deleted it, check the old .bashrc for this function
@@ -320,6 +247,10 @@
         git add .
         git commit -m "$1"
         git push
+      }
+      python-setup() {
+        nix flake init
+        cp ~/flakes/default_python.nix flake.nix
       }
 
       function hb {
@@ -339,9 +270,13 @@
           else
               echo "Failed to upload the document."
           fi
-      }
+        }
+
+        bak() { cp "$1" "$1.bak.$(date +%s)"; }
 
       export PATH=$PATH:"$HOME/.bin"
+
+      todo list
 
       #######################################################
       # Set the ultimate amazing command prompt

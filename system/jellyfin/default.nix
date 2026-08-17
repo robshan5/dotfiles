@@ -3,6 +3,11 @@
 {
     services.jellyfin = {
         enable = true;
+        hardwareAcceleration = {
+            enable = true;
+            type = "vaapi";
+            device = "/dev/dri/renderD128";
+        };
         openFirewall = true;
     };
 

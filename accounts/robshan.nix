@@ -31,7 +31,7 @@
         typst
         ffmpeg
         virtualbox
-        wine-wayland
+        protonvpn-gui
 
         #image viewer
         nomacs

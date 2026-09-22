@@ -1,9 +1,9 @@
-{ pkgs, config,  ... }:
+{ pkgs, vars, ... }:
 
 {
   services.nextcloud = {
     enable   = true;
-    hostName = "nextcloud.robshan.space";
+    hostName = "nextcloud.${vars.domain}";
     https    = true;
     package  = pkgs.nextcloud31; # pin major version; bump intentionally
 

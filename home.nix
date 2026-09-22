@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ vars, ... }:
 
 {
     imports = [
@@ -8,12 +8,12 @@
         ./user/programs/kitty/default.nix
     ];
 
-    home.stateVersion = "25.05"; # Please read the comment before changing.
+    home.stateVersion = vars.stateVersion; # Please read the comment before changing.
 
     home.file = {
     };
 
-    home.keyboard.layout = "uk";
+    home.keyboard.layout = vars.homeKeyboardLayout;
 
     home.sessionVariables = {
         # EDITOR = "emacs";

@@ -1,4 +1,4 @@
-{input, pkgs, config, ...}:
+{ ... }:
 {
     # Enable the X11 windowing system.
     # You can disable this if you're only using the Wayland session.

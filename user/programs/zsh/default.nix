@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, vars, ... }:
 
 {
     programs.starship.enableZshIntegration = true;
@@ -87,8 +87,8 @@
             #kitty ssh
             kssh = "kitty +kitten ssh";
 
-            server-connect = "ssh nix_server@robshan.space -p 5432";
-            server-transmission = "ssh -L 9091:localhost:9091 nix_server@robshan.space -p 5432";
+            server-connect = "ssh ${vars.serverUsername}@${vars.domain} -p ${toString vars.sshPort}";
+            server-transmission = "ssh -L 9091:localhost:9091 ${vars.serverUsername}@${vars.domain} -p ${toString vars.sshPort}";
 
         };
         initContent = ''
@@ -228,10 +228,10 @@
       }
 
     hman() {
-        home-manager switch --flake .#$1
+        home-manager switch --flake ".#$USERNAME@$HOST"
     }
     rebuild(){
-        sudo nixos-rebuild switch --flake .#$1
+        sudo nixos-rebuild switch --flake ".#$HOST"
     }
 
       # Trim leading and trailing spaces (for scripts)

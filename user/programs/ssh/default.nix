@@ -1,12 +1,12 @@
-{ ... }:
+{ vars, ... }:
 
 {
     programs.ssh = {
         extraConfig = "
-            Host server
-                Hostname server
-                Port 5432
-                User nix_server
+            Host ${vars.hostnames.server}
+                Hostname ${vars.hostnames.server}
+                Port ${toString vars.sshPort}
+                User ${vars.serverUsername}
             ";
     };
 }

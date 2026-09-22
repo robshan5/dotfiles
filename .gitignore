@@ -1,0 +1,18 @@
+# Nix build outputs
+result
+result-*
+
+# direnv
+.direnv/
+
+# Rust build artifacts (user/programs/spotify/spotify-adblock)
+target/
+
+# Vim / editor swap files
+*.sw[a-p]
+.*.sw[a-p]
+*~
+
+# OS cruft
+.DS_Store
+Thumbs.db

@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, vars, ... }:
 
 {
     services.nginx = {
@@ -13,17 +13,17 @@
 
             # ── Nextcloud ──────────────────────────────
             # The nextcloud module hooks into this vhost automatically
-            "nextcloud.robshan.space" = {
+            "nextcloud.${vars.domain}" = {
                 forceSSL = true;
-                sslCertificate    = "/etc/ssl/robshan.space.crt";
-                sslCertificateKey = "/etc/ssl/robshan.space.key";
+                sslCertificate    = "/etc/ssl/${vars.domain}.crt";
+                sslCertificateKey = "/etc/ssl/${vars.domain}.key";
             };
 
             # ── Jellyfin ───────────────────────────────
-            "jellyfin.robshan.space" = {
+            "jellyfin.${vars.domain}" = {
                 forceSSL = true;
-                sslCertificate    = "/etc/ssl/robshan.space.crt";
-                sslCertificateKey = "/etc/ssl/robshan.space.key";
+                sslCertificate    = "/etc/ssl/${vars.domain}.crt";
+                sslCertificateKey = "/etc/ssl/${vars.domain}.key";
                 locations."/" = {
                     proxyPass       = "http://127.0.0.1:8096";
                     proxyWebsockets = true;
@@ -34,10 +34,10 @@
             };
 
             # ── Headscale ──────────────────────────────
-            "headscale.robshan.space" = {
+            "headscale.${vars.domain}" = {
                 forceSSL = true;
-                sslCertificate    = "/etc/ssl/robshan.space.crt";
-                sslCertificateKey = "/etc/ssl/robshan.space.key";
+                sslCertificate    = "/etc/ssl/${vars.domain}.crt";
+                sslCertificateKey = "/etc/ssl/${vars.domain}.key";
                 locations."/" = {
                     proxyPass       = "http://127.0.0.1:8080";
                     proxyWebsockets = true;

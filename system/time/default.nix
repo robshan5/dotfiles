@@ -1,20 +1,20 @@
-{inputs, config, pkgs, ...}:
+{ vars, ... }:
 {
     # Set your time zone.
-    time.timeZone = "Europe/Dublin";
+    time.timeZone = vars.timeZone;
 
     # Select internationalisation properties.
-    i18n.defaultLocale = "en_IE.UTF-8";
+    i18n.defaultLocale = vars.locale;
 
     i18n.extraLocaleSettings = {
-        LC_ADDRESS = "en_IE.UTF-8";
-        LC_IDENTIFICATION = "en_IE.UTF-8";
-        LC_MEASUREMENT = "en_IE.UTF-8";
-        LC_MONETARY = "en_IE.UTF-8";
-        LC_NAME = "en_IE.UTF-8";
-        LC_NUMERIC = "en_IE.UTF-8";
-        LC_PAPER = "en_IE.UTF-8";
-        LC_TELEPHONE = "en_IE.UTF-8";
-        LC_TIME = "en_IE.UTF-8";
+        LC_ADDRESS = vars.locale;
+        LC_IDENTIFICATION = vars.locale;
+        LC_MEASUREMENT = vars.locale;
+        LC_MONETARY = vars.locale;
+        LC_NAME = vars.locale;
+        LC_NUMERIC = vars.locale;
+        LC_PAPER = vars.locale;
+        LC_TELEPHONE = vars.locale;
+        LC_TIME = vars.locale;
     };
 }

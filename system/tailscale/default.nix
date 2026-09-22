@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ vars, ... }:
 
 {
     services.headscale = {
@@ -7,14 +7,14 @@
         port    = 8080;
 
         settings = {
-            server_url  = "https://headscale.robshan.space";
+            server_url  = "https://headscale.${vars.domain}";
             ip_prefixes = [ "100.64.0.0/10" "fd7a:115c:a1e0::/48" ];
 
             dns = {
                 override_local_dns = true;
                 nameservers.global = [ "1.1.1.1" "8.8.8.8" ];
                 magic_dns          = true;
-                base_domain        = "robshan.space";
+                base_domain        = "${vars.domain}";
             };
 
             # Uses Tailscale's public DERP relays — works out of the box.

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, vars, ... }:
 
 {
     imports =
@@ -29,7 +29,7 @@
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
-    system.stateVersion = "25.05"; # Did you read the comment?
+    system.stateVersion = vars.stateVersion; # Did you read the comment?
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 }

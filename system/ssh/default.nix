@@ -1,8 +1,8 @@
-{ ... }:
+{ vars, ... }:
 
 {
     services.openssh = {
         enable = true;
-        ports = [ 5432 ];
+        ports = [ vars.sshPort ];
     };
 }

@@ -28,10 +28,7 @@
         spotify
         libreoffice
         obsidian
-        typst
         ffmpeg
-        virtualbox
-        protonvpn-gui
 
         #image viewer
         nomacs
@@ -61,9 +58,7 @@
         ##networking
         networkmanagerapplet
         networkmanager
-        gnome-keyring
         blueman
-        kdePackages.kwallet-pam
         volumeicon
 
         brightnessctl
@@ -76,11 +71,5 @@
         file
         hdparm
         gptfdisk
-
-        nerd-fonts.jetbrains-mono
-        nerd-fonts.recursive-mono
-        roboto
-        source-sans-pro
     ];
-
 }

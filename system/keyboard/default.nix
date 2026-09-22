@@ -1,14 +1,14 @@
-{config, pkgs, lib, input, ... }:
+{ vars, ... }:
 
 {
     # Configure keymap in X11
     services.xserver.xkb = {
-        layout = "ie";
+        layout = vars.keyboardLayout;
         variant = "";
     };
 
     # Configure console keymap
-    console.keyMap = "ie";
+    console.keyMap = vars.keyboardLayout;
 
     services.keyd = {
         enable = true;

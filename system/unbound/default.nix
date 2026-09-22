@@ -1,4 +1,4 @@
-{...}:
+{ vars, ... }:
 
 {
     services.unbound = {
@@ -13,7 +13,7 @@
                 # Allow queries from your LAN (adjust subnet if yours differs)
                 access-control = [
                     "127.0.0.0/8 allow"
-                    "192.168.15.217/24 allow"
+                    "${vars.serverIp}/24 allow"
                     "10.0.0.0/8 allow"
                     "::1/128 allow"
                 ];
@@ -35,14 +35,13 @@
                 prefetch           = true;
                 prefetch-key       = true;
 
-                # ── Local zone for robshan.space ──────────
-                # Replace 192.168.1.x with your server's actual LAN IP!
-                local-zone = [ ''"robshan.space." static'' ];
+                # Local zone for the configured domain (resolves to the server LAN IP)
+                local-zone = [ ''"${vars.domain}." static'' ];
                 local-data = [
-                    ''"robshan.space.            A 192.168.15.217"''   # <── change IP
-                    ''"nextcloud.robshan.space.  A 192.168.15.217"''   # <── change IP
-                    ''"jellyfin.robshan.space.   A 192.168.15.217"''   # <── change IP
-                    ''"headscale.robshan.space.  A 192.168.15.217"''   # <── change IP
+                    ''"${vars.domain}. A ${vars.serverIp}"''
+                    ''"nextcloud.${vars.domain}. A ${vars.serverIp}"''
+                    ''"jellyfin.${vars.domain}. A ${vars.serverIp}"''
+                    ''"headscale.${vars.domain}. A ${vars.serverIp}"''
                 ];
             };
 
@@ -62,6 +61,6 @@
         };
     };
 
-    # Make the server use its own DNS (so it can resolve robshan.space too)
+    # Make the server use its own DNS (so it can resolve the local zone too)
     networking.nameservers = [ "127.0.0.1" "::1" ];
 }

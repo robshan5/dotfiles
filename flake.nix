@@ -3,6 +3,7 @@
     description = "Desktop Flake";
 
     inputs = {
+        # Release channels. Keep these versions in sync with vars.stateVersion.
         nixpkgs.url = "nixpkgs/nixos-25.05";
         home-manager.url = "github:nix-community/home-manager/release-25.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,72 +21,77 @@
             lib = nixpkgs.lib;
             system = "x86_64-linux";
             pkgs = nixpkgs.legacyPackages.${system};
+            vars = import ./vars.nix;
             cShell = import ./user/development/c-shell.nix {inherit pkgs;};
             # pythonShell = import ./user/development/python-shell.nix {inherit pkgs;};
         in {
             # SYSTEM ACCOUNTS
+            # Keyed by hostname so `nixos-rebuild switch --flake .#$(hostname)` works.
             nixosConfigurations = {
-                laptop = lib.nixosSystem {
+                ${vars.hostnames.laptop} = lib.nixosSystem {
                     inherit system;
+                    specialArgs = { inherit inputs vars; };
                     modules = [
-                        ./hosts/laptop/configuration.nix
+                        ./hosts/Lugh/configuration.nix
                     ];
                 };
 
-                server = lib.nixosSystem {
+                ${vars.hostnames.server} = lib.nixosSystem {
                     inherit system;
+                    specialArgs = { inherit inputs vars; };
                     modules = [
-                        ./hosts/server/configuration.nix
+                        ./hosts/Dullahan/configuration.nix
                     ];
                 };
-		
-                desktop = lib.nixosSystem {
+
+                ${vars.hostnames.desktop} = lib.nixosSystem {
                     inherit system;
+                    specialArgs = { inherit inputs vars; };
                     modules = [
-                        ./hosts/desktop/configuration.nix
+                        ./hosts/Balor/configuration.nix
                     ];
                 };
             };
 
             # HOME MANAGER ACCOUNTS
             homeConfigurations = {
-                robshan = home-manager.lib.homeManagerConfiguration {
+                "${vars.username}@${vars.hostnames.laptop}" = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [
                         {
-                            home.username = "robshan";
-                            home.homeDirectory = "/home/robshan";
+                            home.username = vars.username;
+                            home.homeDirectory = "/home/${vars.username}";
                         }
                         ./accounts/robshan.nix
                     ];
-                    extraSpecialArgs = {inherit inputs; };
+                    extraSpecialArgs = {inherit inputs vars; };
                 };
 
-                robshan-desktop = home-manager.lib.homeManagerConfiguration {
+                "${vars.username}@${vars.hostnames.desktop}" = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [
                         {
-                            home.username = "robshan";
-                            home.homeDirectory = "/home/robshan";
+                            home.username = vars.username;
+                            home.homeDirectory = "/home/${vars.username}";
                         }
-                        ./accounts/robshan-desktop.nix
+                        ./accounts/robshan.nix
                     ];
-                    extraSpecialArgs = {inherit inputs; };
+                    extraSpecialArgs = {inherit inputs vars; };
                 };
 
-                nix_server = home-manager.lib.homeManagerConfiguration {
+                "${vars.serverUsername}@${vars.hostnames.server}" = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [
                         {
-                            home.username = "nix_server";
-                            home.homeDirectory = "/home/nix_server";
+                            home.username = vars.serverUsername;
+                            home.homeDirectory = "/home/${vars.serverUsername}";
                         }
                         ./accounts/nix_server.nix
                     ];
-                    extraSpecialArgs = {inherit inputs; };
+                    extraSpecialArgs = {inherit inputs vars; };
                 };
             };
-            devShells = {
+            devShells.${system} = {
                 c = cShell;  # Reference the C development shell
                 # python = pythonShell;  # Reference the Python development shell
             };

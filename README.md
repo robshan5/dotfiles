@@ -52,18 +52,18 @@ Rebuild the system using the flake, specifying your host:
 sudo nixos-rebuild switch --flake .#<host>
 ```
 
-> Replace `<host>` with the machine name defined in `hosts/` — e.g. `.#desktop` or `.#laptop`.
+> Replace `<host>` with the machine name defined in `hosts/` — e.g. `.#Balor` (desktop), `.#Lugh` (laptop) or `.#Dullahan` (server).
 
 ### 3. Set up Home Manager
 
 Add the Home Manager channel, matching the version to your NixOS release:
 
 ```bash
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz home-manager
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
 nix-channel --update
 ```
 
-> For NixOS unstable, use `master.tar.gz` instead of `release-25.11.tar.gz`.
+> For NixOS unstable, use `master.tar.gz` instead of `release-25.05.tar.gz`.
 
 Install Home Manager:
 
@@ -71,13 +71,13 @@ Install Home Manager:
 nix-shell '<home-manager>' -A install
 ```
 
-Apply the Home Manager config for your user:
+Apply the Home Manager config (flake outputs are named `<user>@<host>`):
 
 ```bash
-home-manager switch --flake .#<user>
+home-manager switch --flake .#"$(whoami)@$(hostname)"
 ```
 
-> Replace `<user>` with your username defined in `accounts/` — e.g. `.#robshan`.
+> The `hman` and `rebuild` zsh functions fill this in automatically from the current user and hostname, so normally you just run `hman` or `rebuild`.
 
 ---
 

@@ -40,13 +40,6 @@ in
         viAlias = true;
         vimAlias = true;
 
-        extraPython3Packages = ps: with ps; [
-            pynvim
-            ipykernel
-            ipython
-            jupyter-client
-        ];
-
         plugins = with pkgs.vimPlugins; [
             nvim-cmp
             cmp-nvim-lsp

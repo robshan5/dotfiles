@@ -11,4 +11,6 @@
         ../../system/audio/default.nix
         ../../system/tailscale/client.nix
     ];
+
+    virtualisation.docker.enable = true;
 }

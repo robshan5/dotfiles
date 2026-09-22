@@ -1,8 +1,8 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, vars, ... }:
 let
 super = "Mod4";
 alt = "Mod1";
-wallpaper = "$HOME/Pictures/lwalpapers/wallpapers/b-229.jpg";
+wallpaper = vars.wallpaper;
 in
 {
     wayland.windowManager.hyprland = {

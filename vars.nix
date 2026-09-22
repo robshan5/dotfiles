@@ -26,6 +26,9 @@
   keyboardLayout     = "ie";  # system X11 + console
   homeKeyboardLayout = "uk";  # Home Manager
 
+  # Desktop
+  wallpaper = "$HOME/Pictures/lwalpapers/wallpapers/b-229.jpg";
+
   # Services / networking
   domain    = "robshan.space";         # base domain for nginx/jellyfin/nextcloud/headscale
   serverIp  = "192.168.15.217";        # server LAN IP (unbound local zone)

@@ -52,6 +52,8 @@
         gtk-layer-shell
         noto-fonts
         font-awesome
+        nerd-fonts.recursive-mono
+        nerd-fonts.jetbrains-mono
         jq
         poppler-utils
 

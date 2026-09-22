@@ -4,7 +4,8 @@
 @define-color active #e5c075;
 
 * {
-    font-family: "JetBrainsMono Nerd Font";
+    /* Recursive Mono matches kitty; the nerd font is the fallback for module glyphs */
+    font-family: "Recursive Mono", "JetBrainsMono Nerd Font";
     font-size: 13px;
     background-color: transparent;
     padding: 2px 4px;

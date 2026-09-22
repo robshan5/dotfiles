@@ -128,6 +128,8 @@ in
 
                 # restart (no direct swaymsg equivalent)
                 "${super}+SHIFT, r, exec, hyprctl reload"
+                "${super}+SHIFT, e, exec, hyprctl dispatch exit"
+
 
                 # media keys (need to be bound via evdev or input-remapper)
                 ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +2%"

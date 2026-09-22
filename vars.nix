@@ -27,7 +27,7 @@
   homeKeyboardLayout = "uk";  # Home Manager
 
   # Desktop
-  wallpaper = "$HOME/Pictures/lwalpapers/wallpapers/b-229.jpg";
+  wallpaper = "$HOME/Pictures/walls/apocalypse/a_car_parked_in_a_dark_alley.jpg";
 
   # Services / networking
   domain    = "robshan.space";         # base domain for nginx/jellyfin/nextcloud/headscale

@@ -79,7 +79,7 @@
                     extraSpecialArgs = {inherit inputs vars; };
                 };
 
-                "${vars.serverUsername}@${vars.hostnames.server}" = home-manager.lib.homeManagerConfiguration {
+                ${vars.serverUsername} = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [
                         {

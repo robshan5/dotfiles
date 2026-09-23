@@ -3,9 +3,10 @@
     description = "Desktop Flake";
 
     inputs = {
-        # Release channels. Keep these versions in sync with vars.stateVersion.
-        nixpkgs.url = "nixpkgs/nixos-25.05";
-        home-manager.url = "github:nix-community/home-manager/release-25.05";
+        # Release channels. These track the current NixOS stable release and are
+        # independent of vars.stateVersion (which must stay at the install-time value).
+        nixpkgs.url = "nixpkgs/nixos-26.05";
+        home-manager.url = "github:nix-community/home-manager/release-26.05";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         zen-browser = {
             url = "github:0xc000022070/zen-browser-flake";

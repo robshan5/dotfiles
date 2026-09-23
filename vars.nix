@@ -5,8 +5,9 @@
 # extraSpecialArgs in flake.nix, so any module can access it as `vars`.
 {
   # NixOS + Home Manager state version (system.stateVersion / home.stateVersion).
-  # NOTE: the release channels in flake.nix `inputs` must be bumped by hand to
-  # match — flake input URLs cannot read this file.
+  # This records the release a machine was FIRST installed with so stateful data
+  # keeps its old defaults. It is not a version to upgrade - bump the channels in
+  # flake.nix `inputs` instead, and leave this alone.
   stateVersion = "25.05";
 
   # Accounts

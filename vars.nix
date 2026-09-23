@@ -29,6 +29,61 @@
   # Desktop
   wallpaper = "$HOME/Pictures/walls/apocalypse/a_car_parked_in_a_dark_alley.jpg";
 
+  # ------------------------------------------------------------------
+  # Theme - single source of truth for kitty, waybar, dunst and rofi.
+  # ------------------------------------------------------------------
+  theme = {
+    fonts = {
+      mono = "Recursive Mono";              # terminal / UI
+      nerd = "JetBrainsMono Nerd Font";     # glyph fallback for bar + notifications
+      sizeTerminal     = 11;
+      sizeBar          = 13;
+      sizeNotification = 10;
+      sizeMenu         = 12;
+    };
+
+    # One Dark. `rec` so the semantic names below can reuse the palette.
+    colors = rec {
+      background = "#141619";  # darker than stock One Dark (#282c34)
+      surface    = "#282c34";  # inputs, secondary panels
+      overlay    = "#3d4350";  # borders, separators
+      selection  = "#3e4451";
+      foreground = "#abb2bf";
+      comment    = "#5c6370";  # dimmed text / placeholders
+      cursor     = "#528bff";
+
+      black   = "#282c34";
+      red     = "#e06c75";
+      green   = "#98c379";
+      yellow  = "#e5c07b";
+      blue    = "#61afef";
+      magenta = "#c678dd";
+      cyan    = "#56b6c2";
+      white   = "#abb2bf";
+
+      brightBlack   = "#5c6370";
+      brightRed     = "#e06c75";
+      brightGreen   = "#98c379";
+      brightYellow  = "#e5c07b";
+      brightBlue    = "#61afef";
+      brightMagenta = "#c678dd";
+      brightCyan    = "#56b6c2";
+      brightWhite   = "#ffffff";
+
+      # Semantic aliases - point these at any palette entry above.
+      accent = yellow;   # active workspace, rofi selection
+      alert  = red;      # critical notifications, muted audio
+      border = overlay;
+    };
+
+    # Two hex digits appended to a colour, e.g. rofi panel translucency.
+    opacity = {
+      panel = "F2";  # ~95%
+      input = "FF";
+      row   = "80";  # ~50%
+    };
+  };
+
   # Login screen (SDDM greeter theme - see system/login/default.nix)
   login = {
     flavor      = "mocha";   # latte | frappe | macchiato | mocha

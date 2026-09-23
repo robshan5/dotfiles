@@ -1,9 +1,7 @@
-{ inputs, pkgs, ... }:
+{ vars, ... }:
 let
-    background = "#141619";
-    foreground = "#abb2bf";
-    foreground_alert = "#e06c75";
-    frame = "#abb2bf";
+    c = vars.theme.colors;
+    f = vars.theme.fonts;
 in{
     services.dunst = {
         enable = true;
@@ -16,9 +14,9 @@ in{
                 offset = "(15, 30)";
                 origin = "top-right";
                 transparency = 10;
-                frame_color = frame;
+                frame_color = c.border;
                 corner_radius = 8;
-                font = "JetBrainsMono Nerd Font 9";
+                font = "${f.nerd} ${toString f.sizeNotification}";
                 format = "<b>%s</b>\\n%b";
                 alignment = "left";
                 icon_position = "left";
@@ -32,23 +30,23 @@ in{
             };
 
             urgency_low = {
-                background = background;
-                foreground = foreground;
-                frame_color = frame;
+                background = c.background;
+                foreground = c.comment;
+                frame_color = c.border;
                 timeout = 4;
             };
 
             urgency_normal = {
-                background = background;
-                foreground = foreground;
-                frame_color = frame;
+                background = c.background;
+                foreground = c.foreground;
+                frame_color = c.border;
                 timeout = 6;
             };
 
             urgency_critical = {
-                background = background;
-                foreground = foreground_alert;
-                frame_color = frame;
+                background = c.background;
+                foreground = c.alert;
+                frame_color = c.alert;
                 timeout = 10;
             };
         };

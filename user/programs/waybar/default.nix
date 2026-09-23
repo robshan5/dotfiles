@@ -1,13 +1,19 @@
-{ config, pkgs, ... }:
-
+{ vars, ... }:
+let
+  c = vars.theme.colors;
+  f = vars.theme.fonts;
+in
 {
   programs.waybar = {
     enable = true;
   };
 
-  # Use relative paths for Waybar configuration files
-  home.file.".config/waybar/" = {
-    source = ./waybar; # Relative path to the Waybar config file
-  };
+  home.file.".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
+
+  # style.css is a template - placeholders are filled from vars.theme.
+  home.file.".config/waybar/style.css".text = builtins.replaceStrings
+    [ "@background@" "@foreground@" "@surface@" "@accent@" "@alert@" "@font@" "@nerdfont@" "@fontsize@" ]
+    [ c.background c.foreground c.surface c.accent c.alert f.mono f.nerd (toString f.sizeBar) ]
+    (builtins.readFile ./waybar/style.css);
 }
 

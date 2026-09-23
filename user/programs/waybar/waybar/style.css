@@ -1,12 +1,14 @@
-@define-color background #141619;
-@define-color foreground #abb2bf;
-@define-color muted #e06c75;
-@define-color active #e5c075;
+/* Colours and fonts are substituted from vars.theme - see ../default.nix */
+@define-color background @background@;
+@define-color foreground @foreground@;
+@define-color muted @alert@;
+@define-color active @accent@;
+@define-color surface @surface@;
 
 * {
-    /* Recursive Mono matches kitty; the nerd font is the fallback for module glyphs */
-    font-family: "Recursive Mono", "JetBrainsMono Nerd Font";
-    font-size: 13px;
+    /* mono matches kitty; the nerd font is the fallback for module glyphs */
+    font-family: "@font@", "@nerdfont@";
+    font-size: @fontsize@px;
     background-color: transparent;
     padding: 2px 4px;
 }
@@ -69,5 +71,5 @@ tooltip {
     color: @foreground;
     border-radius: 6px;
     padding: 6px;
-    font-size: 13px;
+    font-size: @fontsize@px;
 }

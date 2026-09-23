@@ -10,10 +10,12 @@ in
     enableTransience = true;
 
     settings = {
-      add_newline = false;
+      add_newline = true;
       command_timeout = 1000;
 
-      format = "$directory$git_branch$git_status$nix_shell$character";
+      # Info on the first line, the prompt itself on the second. Past prompts
+      # collapse to the single-line transient prompt above.
+      format = "$directory$git_branch$git_status$nix_shell$line_break$character";
       right_format = "$cmd_duration";
 
       character = {

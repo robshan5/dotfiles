@@ -50,7 +50,7 @@
       selection  = "#3e4451";
       foreground = "#abb2bf";
       comment    = "#5c6370";  # dimmed text / placeholders
-      cursor     = "#528bff";
+      cursor     = "#abb2bf";
 
       black   = "#282c34";
       red     = "#e06c75";

@@ -71,9 +71,11 @@
       brightWhite   = "#ffffff";
 
       # Semantic aliases - point these at any palette entry above.
-      accent = yellow;   # active workspace, rofi selection
-      alert  = red;      # critical notifications, muted audio
-      border = overlay;
+      accent       = yellow;      # active workspace, kitty tab bar
+      highlight    = blue;        # rofi selected entry
+      onHighlight  = "#000000";   # text drawn on top of `highlight`
+      alert        = red;         # critical notifications, muted audio
+      border       = overlay;
     };
 
     # Two hex digits appended to a colour, e.g. rofi panel translucency.

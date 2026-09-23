@@ -29,7 +29,7 @@ in
         #screenshot
         "${super}+q" = "exec grim -g \"$(slurp)\" ~/Pictures/Screenshots/screenshot-$(date +%Y%m%d-%H%M%S).png";
         #rofi
-        "${super}+d" = "exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun 0 -sidebar-mode -columns 3";
+        "${super}+d" = "exec rofi -show drun";
         #kill window
         "${super}+c" = "kill";
         #change focus

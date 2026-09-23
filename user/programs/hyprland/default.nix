@@ -76,7 +76,7 @@ in
                 "${super}, t, exec, transmission-gtk"
 
                 # launcher
-                "${super}, d, exec, rofi -lines 12 -padding 18 -width 60 -location 0 -show drun 0 -sidebar-mode -columns 3"
+                "${super}, d, exec, rofi -show drun"
 
                 # kill window
                 "${super}, c, killactive"

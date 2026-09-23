@@ -1,4 +1,4 @@
-{ vars, ... }:
+{ lib, vars, ... }:
 let
   c = vars.theme.colors;
 in
@@ -6,17 +6,17 @@ in
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    # Finished prompts collapse to a bare chevron, so scrollback is mostly output.
-    enableTransience = true;
 
     settings = {
       add_newline = true;
       command_timeout = 1000;
 
-      # Info on the first line, the prompt itself on the second. Past prompts
-      # collapse to the single-line transient prompt above.
+      # Info on the first line, the prompt itself on the second. Once a command
+      # runs the whole thing is redrawn as the `transient` profile below.
       format = "$directory$git_branch$git_status$nix_shell$line_break$character";
       right_format = "$cmd_duration";
+
+      profiles.transient = "$character";
 
       character = {
         success_symbol = "[❯](bold ${c.green})";
@@ -57,4 +57,24 @@ in
       };
     };
   };
+
+  # Starship only ships a transient prompt for fish/cmd, so zsh gets it here.
+  # mkAfter keeps this below the `starship init zsh` that home-manager emits.
+  programs.zsh.initContent = lib.mkAfter ''
+    if [[ $TERM != "dumb" ]]; then
+      _starship_transient_prompt() {
+        PROMPT="$(starship prompt --profile transient --terminal-width="$COLUMNS")"
+        RPROMPT=""
+        zle .reset-prompt
+      }
+      zle-line-finish() { _starship_transient_prompt }
+      zle -N zle-line-finish
+
+      # Ctrl-C should collapse the prompt too.
+      TRAPINT() {
+        [[ -o zle ]] && _starship_transient_prompt
+        return $(( 128 + $1 ))
+      }
+    fi
+  '';
 }

@@ -29,6 +29,17 @@
   # Desktop
   wallpaper = "$HOME/Pictures/walls/apocalypse/a_car_parked_in_a_dark_alley.jpg";
 
+  # Login screen (SDDM greeter theme - see system/login/default.nix)
+  login = {
+    flavor      = "mocha";   # latte | frappe | macchiato | mocha
+    font        = "JetBrainsMono Nerd Font";
+    fontSize    = "12";
+    cursorTheme = "Adwaita";
+    # A nix path to an image (e.g. ./assets/login.jpg), or null for the
+    # theme's own background. Must be a store path, not "$HOME/...".
+    background  = null;
+  };
+
   # Services / networking
   domain    = "robshan.space";         # base domain for nginx/jellyfin/nextcloud/headscale
   serverIp  = "192.168.15.217";        # server LAN IP (unbound local zone)

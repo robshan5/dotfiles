@@ -62,11 +62,23 @@ in
   # mkAfter keeps this below the `starship init zsh` that home-manager emits.
   programs.zsh.initContent = lib.mkAfter ''
     if [[ $TERM != "dumb" ]]; then
+      # starship sets PROMPT once and relies on promptsubst, so stash the real
+      # one and put it back before every new prompt is drawn.
+      _starship_prompt_full=$PROMPT
+      _starship_rprompt_full=$RPROMPT
+
       _starship_transient_prompt() {
         PROMPT="$(starship prompt --profile transient --terminal-width="$COLUMNS")"
         RPROMPT=""
         zle .reset-prompt
       }
+
+      _starship_restore_prompt() {
+        PROMPT=$_starship_prompt_full
+        RPROMPT=$_starship_rprompt_full
+      }
+      precmd_functions=(_starship_restore_prompt $precmd_functions)
+
       zle-line-finish() { _starship_transient_prompt }
       zle -N zle-line-finish
 

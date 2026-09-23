@@ -7,8 +7,18 @@
         history = {
             size = 50000;
             ignoreDups = true;
+            ignoreSpace = true;
+            expireDuplicatesFirst = true;
         };
         syntaxHighlighting.enable = true;
+        # Greyed-out inline prediction of the rest of the command; -> accepts it.
+        autosuggestion = {
+            enable = true;
+            strategy = [ "history" "completion" ];
+            highlight = "fg=${vars.theme.colors.comment}";
+        };
+        # Up/down filter history by what is already typed.
+        historySubstringSearch.enable = true;
         prezto.caseSensitive = false;
         enableCompletion = true;
         shellAliases = {

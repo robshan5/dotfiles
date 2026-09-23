@@ -17,6 +17,15 @@ in
 
     # Palette comes from vars.theme instead of a bundled themeFile.
     settings = {
+      # Tighter rows/columns so scrollback shows more output per screen.
+      adjust_line_height = "96%";
+      window_padding_width = 6;
+      scrollback_lines = 20000;
+      enable_audio_bell = false;
+      confirm_os_window_close = 0;
+      tab_bar_style = "powerline";
+      tab_bar_min_tabs = 2;
+
       background = c.background;
       foreground = c.foreground;
       cursor = c.cursor;

@@ -11,9 +11,9 @@ in
       add_newline = false;
       command_timeout = 1000;
 
-      # Info on the first line, the prompt itself on the second. Once a command
-      # runs the whole thing is redrawn as the `transient` profile below.
-      format = "$directory$git_branch$git_status$nix_shell$line_break$character";
+      # Leading $line_break (rather than add_newline) so the blank separator
+      # applies to the live prompt only, not the transient profile.
+      format = "$line_break$directory$git_branch$git_status$nix_shell$line_break$character";
       right_format = "$cmd_duration";
 
       profiles.transient = "$character";

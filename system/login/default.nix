@@ -12,7 +12,6 @@ in
 {
     services.displayManager.sddm = {
         enable = true;
-        package = pkgs.kdePackages.sddm;   # Qt6 build, matches the theme
         wayland.enable = true;
         theme = "catppuccin-${vars.login.flavor}";
         extraPackages = [ sddmTheme ];

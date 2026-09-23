@@ -8,7 +8,7 @@ in
     enableZshIntegration = true;
 
     settings = {
-      add_newline = true;
+      add_newline = false;
       command_timeout = 1000;
 
       # Info on the first line, the prompt itself on the second. Once a command

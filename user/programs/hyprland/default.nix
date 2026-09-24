@@ -156,10 +156,12 @@ in
     services.hyprpaper = {
         enable = true;
         settings = {
-            ipc = "on";
+            ipc = true;
             splash = false;
-            preload = wallpaper;
-            wallpaper = ",${wallpaper}";
+            # empty monitor = fallback for every output
+            wallpaper = [
+                { monitor = ""; path = wallpaper; }
+            ];
         };
     };
 }

@@ -1,6 +1,7 @@
 return {
 	"neovim/nvim-lspconfig",
 	lazy = false,
+	dependencies = { "hrsh7th/cmp-nvim-lsp" },
 	config = function()
 		local border_opts = { border = "single", focusable = false }
 

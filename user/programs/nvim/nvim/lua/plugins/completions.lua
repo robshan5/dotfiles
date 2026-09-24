@@ -6,35 +6,32 @@ return {
   {
     "dcampos/nvim-snippy",
     lazy = false,
-    require('snippy').setup({
-      mappings = {
-        is = {
-          ['<Tab>'] = 'expand_or_advance',
-          ['<S-Tab>'] = 'previous',
+    config = function()
+      require("snippy").setup({
+        mappings = {
+          is = {
+            ["<Tab>"] = "expand_or_advance",
+            ["<S-Tab>"] = "previous",
+          },
+          nx = {
+            ["<leader>x"] = "cut_text",
+          },
         },
-        nx = {
-          ['<leader>x'] = 'cut_text',
-        },
-      },
-    }),
+      })
+    end,
   },
   {
     "dcampos/cmp-snippy",
     lazy = false,
-    require 'cmp'.setup {
-      snippet = {
-        expand = function(args)
-          require 'snippy'.expand_snippet(args.body)
-        end
-      },
-      sources = {
-        { name = 'snippy' }
-      }
-    }
   },
   {
     "hrsh7th/nvim-cmp",
     lazy = false,
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "dcampos/nvim-snippy",
+      "dcampos/cmp-snippy",
+    },
     config = function()
       local cmp = require("cmp")
       cmp.setup({

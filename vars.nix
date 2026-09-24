@@ -25,7 +25,7 @@
   timeZone           = "Europe/Dublin";
   locale             = "en_IE.UTF-8";
   keyboardLayout     = "ie";  # system X11 + console
-  homeKeyboardLayout = "uk";  # Home Manager
+  homeKeyboardLayout = "gb";  # Home Manager (XKB name - "uk" is console-only)
 
   # Desktop
   wallpaper = "$HOME/Pictures/walls/apocalypse/a_car_parked_in_a_dark_alley.jpg";

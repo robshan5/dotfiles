@@ -8,7 +8,7 @@
   # This records the release a machine was FIRST installed with so stateful data
   # keeps its old defaults. It is not a version to upgrade - bump the channels in
   # flake.nix `inputs` instead, and leave this alone.
-  stateVersion = "25.05";
+  stateVersion = "26.05";
 
   # Accounts
   username       = "robshan";     # primary interactive user

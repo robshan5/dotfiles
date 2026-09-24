@@ -48,13 +48,12 @@ in
                     "workspaces,1,3,default"
                 ];
             };
-            windowrulev2 = [
-                # "float,class env = WLR_NO_HARDWARE_CURSORS,1:^(pavucontrol)$"
-                "workspace 1,class:^(zen-beta)$"
-                "workspace 2,class:^(kitty)$"
-                "workspace 3,class:^(obsidian)$"
-                "workspace 4,class:^(spotify)$"
-                "workspace 5,class:^(transmission-gtk)$"
+            windowrule = [
+                "match:class zen-beta, workspace 1"
+                "match:class kitty, workspace 2"
+                "match:class obsidian, workspace 3"
+                "match:class LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify, workspace 4"
+                "match:class transmission-gtk, workspace 5"
             ];
             binde = [
                 #resize window

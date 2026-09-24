@@ -33,11 +33,11 @@
     systemd.services.systemd-udev-settle.enable = false;
 
     # A hung unit should not cost 90s of boot or shutdown.
-    systemd.extraConfig = ''
-        DefaultTimeoutStartSec=15s
-        DefaultTimeoutStopSec=10s
-        DefaultDeviceTimeoutSec=15s
-    '';
+    # systemd.extraConfig = ''
+    #     DefaultTimeoutStartSec=15s
+    #     DefaultTimeoutStopSec=10s
+    #     DefaultDeviceTimeoutSec=15s
+    # '';
     systemd.user.extraConfig = ''
         DefaultTimeoutStopSec=10s
     '';

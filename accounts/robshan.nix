@@ -68,8 +68,8 @@
         gnuplot
         cargo
         wine
-        glxinfo
         parted
+        mesa-demos
         file
         hdparm
         gptfdisk

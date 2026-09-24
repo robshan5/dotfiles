@@ -14,15 +14,8 @@ in
             #nix
             nil
             nixd
-            #python
-            # pyright
-            # black
-            # isort
-            #c
-            # clang
+
             gcc
-            # clang-tools
-            # cmake
             gdb
             clang-tidy-sarif
             gnumake

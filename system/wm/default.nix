@@ -10,8 +10,6 @@
     # Enable the KDE Plasma Desktop Environment.
     # (the SDDM greeter itself is configured in ../login)
     services.desktopManager.plasma6.enable = true;
-    #Enable sway
-    programs.sway.enable = true;
     #Enable hyprland
     programs.hyprland.enable = true;
 }

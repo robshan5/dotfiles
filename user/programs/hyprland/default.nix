@@ -123,7 +123,7 @@ in
                 (bind "${super} + SHIFT + S" ''hl.dsp.window.float({ action = "toggle" })'')
 
                 # session
-                (bind "${super} + SHIFT + R" "hl.dsp.reload_config()")
+                (bind "${super} + SHIFT + R" ''hl.dsp.exec_cmd("hyprctl reload")'')
                 (bind "${super} + SHIFT + E" "hl.dsp.exit()")
 
                 # move/resize with the mouse

@@ -31,7 +31,7 @@ in
         location = mkLiteral "center";
         width = mkLiteral "600px";
         border = mkLiteral "2px";
-        border-color = mkLiteral c.brightWhite;
+        border-color = mkLiteral c.border;
         border-radius = mkLiteral "16px";
         background-color = mkLiteral "${c.background}${o.panel}";
       };
@@ -44,7 +44,7 @@ in
       "inputbar" = {
         background-color = mkLiteral "${c.surface}${o.input}";
         border = mkLiteral "2px";
-        border-color = mkLiteral c.brightWhite;
+        border-color = mkLiteral c.border;
         border-radius = mkLiteral "12px";
         padding = mkLiteral "8px 16px";
         spacing = mkLiteral "8px";

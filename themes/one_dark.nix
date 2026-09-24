@@ -46,7 +46,7 @@
     highlight    = blue;        # rofi selected entry
     onHighlight  = "#000000";   # text drawn on top of `highlight`
     alert        = red;         # critical notifications, muted audio
-    border       = overlay;
+    border       = brightWhite; # matches hyprland's active window border
   };
 
   # Two hex digits appended to a colour, e.g. rofi panel translucency.

@@ -73,3 +73,33 @@ tooltip {
     padding: 6px;
     font-size: @fontsize@px;
 }
+
+/* Tray menus are built inside waybar, so the `*` rule above makes them
+   see-through unless the background is restated here. */
+menu {
+    background-color: @background;
+    color: @foreground;
+    border: 1px solid @surface;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+menu menuitem {
+    background-color: transparent;
+    color: @foreground;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+menu menuitem:hover {
+    background-color: @surface;
+}
+
+menu menuitem:disabled {
+    color: @surface;
+}
+
+menu separator {
+    background-color: @surface;
+    margin: 4px 2px;
+}

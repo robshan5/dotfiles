@@ -58,6 +58,8 @@ in
             };
 
             config = {
+                # used for the error bar and built-in notifications
+                misc.font_family = vars.theme.fonts.nerd;
                 input = {
                     kb_layout = vars.homeKeyboardLayout;
                     touchpad.natural_scroll = true;

@@ -10,6 +10,9 @@
 
     home.stateVersion = vars.stateVersion; # Please read the comment before changing.
 
+    # Required for fonts installed via home.packages to be visible to fontconfig.
+    fonts.fontconfig.enable = true;
+
     home.file = {
     };
 

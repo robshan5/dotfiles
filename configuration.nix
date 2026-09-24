@@ -12,6 +12,7 @@
             ./system/networking/default.nix
             ./system/time/default.nix
             ./system/performance/default.nix
+            ./system/fonts/default.nix
         ];
 
     programs.zsh.enable = true;

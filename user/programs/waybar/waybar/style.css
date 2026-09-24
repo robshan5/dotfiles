@@ -4,6 +4,7 @@
 @define-color muted @alert@;
 @define-color active @accent@;
 @define-color surface @surface@;
+@define-color border @border@;
 
 * {
     /* mono matches kitty; the nerd font is the fallback for module glyphs */
@@ -79,7 +80,7 @@ tooltip {
 menu {
     background-color: @background;
     color: @foreground;
-    border: 1px solid @surface;
+    border: 2px solid @border;
     border-radius: 6px;
     padding: 4px;
 }

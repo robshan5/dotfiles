@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ vars, ... }:
 let
   super = "Mod4";
   alt = "Mod1";
@@ -8,7 +8,7 @@ in
   wayland.windowManager.sway = {
     enable = true;
     config = {
-      modifier = "$super";
+      modifier = "${super}";
       fonts = {
         names = [ "JetBrainsMono" ];
         size = 10.0;
@@ -140,18 +140,13 @@ in
         }
       ];
     };
+    # xdg-desktop-portal is D-Bus activated on NixOS, so it must not be exec'd by path
     extraConfig = ''
-      exec_always picom -b
       exec_always ollama serve
       exec_always playerctld daemon
-      exec_always xset b off
-      exec_always LD_PRELOAD=/usr/local/lib/spotify-adblock.so
       exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-      exec /usr/libexec/xdg-desktop-portal &
-      exec /usr/libexec/xdg-desktop-portal-wlr &
-      exec /usr/libexec/xdg-desktop-portal-gtk &
       input * {
-        xkb_layout gb
+        xkb_layout ${vars.homeKeyboardLayout}
         tap enabled
         natural_scroll enabled
       }

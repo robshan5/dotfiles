@@ -12,7 +12,7 @@
         tmux
         kitty
         starship
-        nextcloud31
+        nextcloud32
         btop
         openssl
         nginx

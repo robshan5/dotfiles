@@ -89,7 +89,7 @@
             ungz = "tar -xvzf";
 
             #logs in /var/log
-            logs = "sudo find /var/log -type f =exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"; #don't ask
+            logs = "sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"; #don't ask
             #SHA1
             sha1 = "openssl sha1";
             clickpaste = "sleep 3; xdptpp; type \"$(xclip -o -selection clipboard)\"";
@@ -118,7 +118,7 @@
 
       extract(){
         for archive in "$@"; do
-          if [ -f "@archive" ]; then
+          if [ -f "$archive" ]; then
             case $archive in
               *.tar.bz2) tar xvjf $archive ;;
               *.tar.gz) tar xvzf $archive ;;

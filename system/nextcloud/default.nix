@@ -5,7 +5,7 @@
     enable   = true;
     hostName = "nextcloud.${vars.domain}";
     https    = true;
-    package  = pkgs.nextcloud31; # pin major version; bump intentionally
+    package  = pkgs.nextcloud32; # pin major version; bump one major at a time
 
     datadir = "/var/lib/nextcloud"; # change to a bigger disk if needed
 

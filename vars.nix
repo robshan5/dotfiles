@@ -39,6 +39,7 @@
   # Login screen (SDDM greeter theme - see system/login/default.nix)
   login = {
     flavor      = "mocha";   # latte | frappe | macchiato | mocha
+    accent      = "mauve";   # rosewater|flamingo|pink|mauve|red|maroon|peach|yellow|green|teal|sky|sapphire|blue|lavender
     font        = "JetBrainsMono Nerd Font";
     fontSize    = "12";
     cursorTheme = "Adwaita";

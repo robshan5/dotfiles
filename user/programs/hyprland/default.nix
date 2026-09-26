@@ -110,7 +110,7 @@ in
                 (bind "${super} + SHIFT + RETURN" ''hl.dsp.exec_cmd("zen-beta")'')
                 (bind "${super} + RETURN" ''hl.dsp.exec_cmd("kitty")'')
                 (bind "${super} + CTRL + RETURN" ''hl.dsp.exec_cmd("obsidian")'')
-                (bind "${super} + S" ''hl.dsp.exec_cmd("spotify")'')
+                (bind "${super} + S" ''hl.dsp.exec_cmd("LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify")'')
                 (bind "${super} + T" ''hl.dsp.exec_cmd("transmission-gtk")'')
 
                 # launcher

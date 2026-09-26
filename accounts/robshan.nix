@@ -73,5 +73,6 @@
         file
         hdparm
         gptfdisk
+        proton-vpn
     ];
 }

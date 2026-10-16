@@ -1,6 +1,19 @@
-{ pkgs, inputs, ...}:
+{ pkgs, lib, vars, inputs, ...}:
 let
-    nvimConfig = ./nvim;
+    themeLua = pkgs.writeText "theme.lua" (
+        import ./theme-lua.nix {
+            inherit lib;
+            theme = vars.theme;
+        }
+    );
+
+    # The tracked config plus the palette generated from vars.theme, so
+    # colors/dotfiles.lua can `require("theme")`.
+    nvimConfig = pkgs.runCommandLocal "nvim-config" { } ''
+        cp -r ${./nvim} $out
+        chmod -R u+w $out
+        install -Dm444 ${themeLua} $out/lua/theme.lua
+    '';
 in 
     {
     home = {

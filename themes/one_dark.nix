@@ -11,14 +11,13 @@
     transparent = true;
 
     fonts = {
-        # Family names as fontconfig reports them - the nerd-fonts package
-        # patches Recursive into "RecMono*", there is no "Recursive Mono".
-        mono = "RecMonoCasual Nerd Font";     # terminal / UI
+        # Family names as fontconfig reports them (`fc-list : family`).
+        mono = "JetBrainsMono Nerd Font";     # terminal / UI
         nerd = "JetBrainsMono Nerd Font";     # glyph fallback for bar + notifications
         # nixpkgs attribute paths providing the families above. Installed by
-        # ../system/fonts/default.nix, so a theme brings its own fonts.
+        # ../system/fonts/default.nix and the Home Manager profile, so a theme
+        # brings its own fonts - see ./font-packages.nix.
         packages = [
-            "nerd-fonts.recursive-mono"
             "nerd-fonts.jetbrains-mono"
         ];
         sizeTerminal     = 11;

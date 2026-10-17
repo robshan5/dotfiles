@@ -50,10 +50,10 @@
         wl-clipboard
         xwayland
         gtk-layer-shell
+        # Theme fonts are installed system-wide from the active theme's
+        # fonts.packages - see ../system/fonts/default.nix.
         noto-fonts
         font-awesome
-        nerd-fonts.recursive-mono
-        nerd-fonts.jetbrains-mono
         jq
         poppler-utils
 

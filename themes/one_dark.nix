@@ -13,6 +13,12 @@
     fonts = {
         mono = "Recursive Mono";              # terminal / UI
         nerd = "JetBrainsMono Nerd Font";     # glyph fallback for bar + notifications
+        # nixpkgs attribute paths providing the families above. Installed by
+        # ../system/fonts/default.nix, so a theme brings its own fonts.
+        packages = [
+            "nerd-fonts.recursive-mono"
+            "nerd-fonts.jetbrains-mono"
+        ];
         sizeTerminal     = 11;
         sizeBar          = 13;
         sizeNotification = 10;

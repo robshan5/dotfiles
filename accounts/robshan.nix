@@ -1,5 +1,12 @@
-{ pkgs, inputs, ... }:
-
+{ pkgs, lib, inputs, vars, ... }:
+let
+  # Installed here as well as system-wide so that switching theme and running
+  # `home-manager switch` alone still gets the fonts the new theme asks for.
+  themeFonts = import ../themes/font-packages.nix {
+    inherit lib pkgs;
+    theme = vars.theme;
+  };
+in
 {
     imports = [
         ../home.nix
@@ -50,8 +57,7 @@
         wl-clipboard
         xwayland
         gtk-layer-shell
-        # Theme fonts are installed system-wide from the active theme's
-        # fonts.packages - see ../system/fonts/default.nix.
+        # Generic families; the active theme's own fonts are appended below.
         noto-fonts
         font-awesome
         jq
@@ -74,5 +80,5 @@
         hdparm
         gptfdisk
         proton-vpn
-    ];
+    ] ++ themeFonts;
 }

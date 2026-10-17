@@ -1,14 +1,10 @@
 { pkgs, lib, vars, ... }:
 let
-  # Each theme lists the nixpkgs attribute paths of the fonts it needs
-  # (see ../../themes/*.nix), so switching theme switches the installed fonts.
-  resolve =
-    path:
-    lib.attrByPath (lib.splitString "." path)
-      (throw "theme font package '${path}' does not exist in nixpkgs")
-      pkgs;
-
-  themeFonts = map resolve vars.theme.fonts.packages;
+  # Fonts named by the active theme - see ../../themes/font-packages.nix.
+  themeFonts = import ../../themes/font-packages.nix {
+    inherit lib pkgs;
+    theme = vars.theme;
+  };
 in
 {
   fonts = {

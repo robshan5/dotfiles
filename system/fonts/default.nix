@@ -16,13 +16,17 @@ in
     fontDir.enable = true;
 
     # Generic families every theme relies on, plus the active theme's own.
-    packages =
+    # nerd-fonts.jetbrains-mono is here rather than in a theme because the sddm
+    # greeter is themed separately, from vars.login.font.
+    packages = lib.unique (
       (with pkgs; [
         noto-fonts
         noto-fonts-color-emoji
         font-awesome
+        nerd-fonts.jetbrains-mono
       ])
-      ++ themeFonts;
+      ++ themeFonts
+    );
 
     # Without these, anything requesting a generic family (Hyprland's own error
     # bar and notifications ask for "Sans") renders as empty boxes.

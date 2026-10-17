@@ -62,7 +62,7 @@
         onHighlight  = "#000000";   # text drawn on top of `highlight`
         alert        = red;         # critical notifications, muted audio
         border       = brightWhite; # matches hyprland's active window border
-        float        = surface;     # floating windows / popups
+        float        = background;  # floating windows / popups - match the editor bg
         floatBorder  = overlay;
 
         # --- Diagnostics (LSP severities) ----------------------------------

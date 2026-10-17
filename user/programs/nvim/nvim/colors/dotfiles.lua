@@ -17,6 +17,8 @@ local c = theme.colors
 local s = c.syntax
 
 local bg = theme.transparent and "NONE" or c.background
+-- Floating windows (telescope, cmdline, popups) deliberately share the editor
+-- background so they blend with the terminal, like the lazy.nvim window.
 local float_bg = theme.transparent and "NONE" or c.float
 
 vim.cmd.highlight("clear")
@@ -61,11 +63,11 @@ local groups = {
 	MsgArea = { fg = c.foreground },
 	MsgSeparator = { fg = c.overlay },
 	NonText = { fg = c.overlay },
-	Pmenu = { fg = c.foreground, bg = c.float },
+	Pmenu = { fg = c.foreground, bg = float_bg },
 	PmenuSel = { fg = c.onHighlight, bg = c.highlight, bold = true },
-	PmenuKind = { fg = s.type, bg = c.float },
+	PmenuKind = { fg = s.type, bg = float_bg },
 	PmenuKindSel = { fg = c.onHighlight, bg = c.highlight },
-	PmenuExtra = { fg = c.comment, bg = c.float },
+	PmenuExtra = { fg = c.comment, bg = float_bg },
 	PmenuExtraSel = { fg = c.onHighlight, bg = c.highlight },
 	PmenuSbar = { bg = c.surface },
 	PmenuThumb = { bg = c.overlay },
@@ -160,11 +162,11 @@ local groups = {
 	DiagnosticUnderlineInfo = { sp = c.info, undercurl = true },
 	DiagnosticUnderlineHint = { sp = c.hint, undercurl = true },
 	DiagnosticUnderlineOk = { sp = c.ok, undercurl = true },
-	DiagnosticFloatingError = { fg = c.error, bg = c.float },
-	DiagnosticFloatingWarn = { fg = c.warning, bg = c.float },
-	DiagnosticFloatingInfo = { fg = c.info, bg = c.float },
-	DiagnosticFloatingHint = { fg = c.hint, bg = c.float },
-	DiagnosticFloatingOk = { fg = c.ok, bg = c.float },
+	DiagnosticFloatingError = { fg = c.error, bg = float_bg },
+	DiagnosticFloatingWarn = { fg = c.warning, bg = float_bg },
+	DiagnosticFloatingInfo = { fg = c.info, bg = float_bg },
+	DiagnosticFloatingHint = { fg = c.hint, bg = float_bg },
+	DiagnosticFloatingOk = { fg = c.ok, bg = float_bg },
 	DiagnosticSignError = { fg = c.error, bg = bg },
 	DiagnosticSignWarn = { fg = c.warning, bg = bg },
 	DiagnosticSignInfo = { fg = c.info, bg = bg },
@@ -180,7 +182,7 @@ local groups = {
 	LspInlayHint = { fg = c.comment, bg = c.surface, italic = true },
 	LspSignatureActiveParameter = { fg = c.accent, bold = true },
 	LspCodeLens = { fg = c.comment, italic = true },
-	LspInfoBorder = { fg = c.floatBorder, bg = c.float },
+	LspInfoBorder = { fg = c.floatBorder, bg = float_bg },
 
 	-- Treesitter
 	["@variable"] = { fg = s.variable },
@@ -282,13 +284,17 @@ local groups = {
 	CmpItemKindConstant = { fg = s.constant },
 
 	-- Telescope
-	TelescopeNormal = { fg = c.foreground, bg = c.float },
-	TelescopeBorder = { fg = c.floatBorder, bg = c.float },
+	TelescopeNormal = { fg = c.foreground, bg = float_bg },
+	TelescopeBorder = { fg = c.floatBorder, bg = float_bg },
 	TelescopeTitle = { fg = c.background, bg = c.accent, bold = true },
-	TelescopePromptNormal = { fg = c.foreground, bg = c.surface },
-	TelescopePromptBorder = { fg = c.surface, bg = c.surface },
+	TelescopeResultsNormal = { fg = c.foreground, bg = float_bg },
+	TelescopeResultsBorder = { fg = c.floatBorder, bg = float_bg },
+	TelescopePreviewNormal = { fg = c.foreground, bg = float_bg },
+	TelescopePreviewBorder = { fg = c.floatBorder, bg = float_bg },
+	TelescopePromptNormal = { fg = c.foreground, bg = float_bg },
+	TelescopePromptBorder = { fg = c.floatBorder, bg = float_bg },
 	TelescopePromptTitle = { fg = c.onHighlight, bg = c.highlight, bold = true },
-	TelescopePromptPrefix = { fg = c.accent, bg = c.surface },
+	TelescopePromptPrefix = { fg = c.accent, bg = float_bg },
 	TelescopeSelection = { fg = c.foreground, bg = c.selection, bold = true },
 	TelescopeSelectionCaret = { fg = c.accent, bg = c.selection },
 	TelescopeMatching = { fg = c.highlight, bold = true },
@@ -316,11 +322,16 @@ local groups = {
 	IblScope = { fg = c.comment },
 
 	-- noice / nvim-notify
-	NoiceCmdlinePopup = { fg = c.foreground, bg = c.float },
-	NoiceCmdlinePopupBorder = { fg = c.floatBorder, bg = c.float },
+	NoiceCmdlinePopup = { fg = c.foreground, bg = float_bg },
+	NoiceCmdlinePopupBorder = { fg = c.floatBorder, bg = float_bg },
 	NoiceCmdlineIcon = { fg = c.accent },
-	NoiceConfirmBorder = { fg = c.floatBorder, bg = c.float },
-	NotifyBackground = { bg = c.float },
+	NoiceConfirm = { fg = c.foreground, bg = float_bg },
+	NoiceConfirmBorder = { fg = c.floatBorder, bg = float_bg },
+	NoicePopup = { fg = c.foreground, bg = float_bg },
+	NoicePopupBorder = { fg = c.floatBorder, bg = float_bg },
+	NoicePopupmenu = { fg = c.foreground, bg = float_bg },
+	NoicePopupmenuBorder = { fg = c.floatBorder, bg = float_bg },
+	NotifyBackground = { bg = float_bg },
 	NotifyERRORBorder = { fg = c.error },
 	NotifyWARNBorder = { fg = c.warning },
 	NotifyINFOBorder = { fg = c.info },
